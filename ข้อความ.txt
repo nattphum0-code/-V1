@@ -1,0 +1,2192 @@
+<!DOCTYPE html>
+
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ร้านกู้ชีพงานค้าง 🌸</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Mitr:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --pink-50:#fff0f6;--pink-100:#ffe0ee;--pink-200:#ffb3d1;
+  --pink-300:#ff80b0;--pink-400:#ff4d8d;--pink-500:#ff1a6a;
+  --gray-400:#aaa;--gray-600:#666;--gray-700:#555;--gray-800:#333;
+  --shadow-sm:0 2px 8px rgba(255,100,160,.10);
+  --shadow-md:0 4px 20px rgba(255,100,160,.18);
+  --shadow-lg:0 8px 40px rgba(255,100,160,.22);
+  --radius:18px;--radius-sm:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Sarabun',sans-serif;background:#fff0f6;color:#333;min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;top:-120px;right:-120px;width:420px;height:420px;border-radius:50%;-webkit-border-radius:50%;background:radial-gradient(circle,#ffb3d1 0%,transparent 70%);opacity:.2;pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;bottom:-100px;left:-100px;width:340px;height:340px;border-radius:50%;-webkit-border-radius:50%;background:radial-gradient(circle,#ff80b0 0%,transparent 70%);opacity:.15;pointer-events:none;z-index:0;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1.5px solid #ffb3d1;padding:0 16px;height:auto;min-height:56px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;box-shadow:0 2px 14px rgba(255,130,170,.10);padding-top:8px;padding-bottom:8px;}
+.nav-logo{font-family:‘Mitr’,sans-serif;font-size:1.05rem;font-weight:600;color:#ff4d8d;display:flex;align-items:center;gap:7px;cursor:pointer;flex-shrink:0;}
+.nav-right{display:flex;align-items:center;gap:4px;flex-wrap:nowrap;overflow:visible;}
+.nav-btn{background:none;border:none;font-family:‘Sarabun’,sans-serif;font-size:.8rem;font-weight:500;color:#666666;cursor:pointer;padding:6px 10px;border-radius:30px;-webkit-border-radius:30px;transition:background .2s,color .2s;white-space:nowrap;flex-shrink:0;}
+.nav-btn:hover{background:#ffe0ee;color:#ff4d8d;}
+.nav-btn.active{background:#ff4d8d;color:#fff;}
+.nav-btn-pink{background:#ff4d8d!important;background:-webkit-linear-gradient(135deg,#ff80b0,#ff4d8d)!important;background:linear-gradient(135deg,#ff80b0,#ff4d8d)!important;color:#fff!important;box-shadow:0 2px 10px rgba(255,77,141,.25);}
+
+/* PROFILE AVATAR NAV */
+.nav-avatar-wrap{position:relative;}
+.nav-avatar{width:38px;height:38px;border-radius:50%;-webkit-border-radius:50%;border:2.5px solid #ff80b0;cursor:pointer;object-fit:cover;background:#ffe0ee;display:flex;align-items:center;justify-content:center;overflow:hidden;transition:border-color .2s;}
+.nav-avatar:hover{border-color:#ff4d8d;}
+.nav-avatar img{width:100%;height:100%;object-fit:cover;}
+.nav-avatar-placeholder{font-size:1.1rem;color:#ff4d8d;}
+.profile-dropdown{position:absolute;top:48px;right:0;background:#fff;border:1.5px solid #ffe0ee;border-radius:14px;-webkit-border-radius:14px;-webkit-border-radius:14px;box-shadow:0 4px 20px rgba(255,100,160,.18);min-width:180px;overflow:hidden;z-index:200;display:none;}
+.profile-dropdown.open{display:block;animation:fadeIn .2s ease;}
+.pd-header{padding:14px 16px 10px;border-bottom:1px solid #ffe0ee;}
+.pd-name{font-weight:600;font-size:.9rem;color:#333333;}
+.pd-username{font-size:.75rem;color:#aaaaaa;}
+.pd-item{display:flex;align-items:center;gap:9px;padding:11px 16px;font-size:.85rem;color:#555555;cursor:pointer;transition:background .15s;}
+.pd-item:hover{background:#fff0f6;color:#ff4d8d;}
+.pd-item.danger{color:#e74c3c;}
+.pd-item.danger:hover{background:#fff5f5;}
+
+/* PAGES */
+.page{display:none;animation:fadeIn .35s ease;}
+.page.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* HERO */
+.hero{position:relative;z-index:1;text-align:center;padding:60px 20px 40px;background:transparent;}
+.hero-badge{display:inline-block;background:#ffe0ee;color:#ff4d8d;font-size:.82rem;font-weight:600;padding:5px 16px;border-radius:30px;-webkit-border-radius:30px;margin-bottom:16px;border:1.5px solid #ffb3d1;}
+.hero h1{font-family:‘Mitr’,sans-serif;font-size:clamp(1.8rem,5vw,3rem);font-weight:700;color:#ff4d8d;line-height:1.2;margin-bottom:12px;}
+.hero h1 .accent{color:#ff80b0;color:#ff80b0;}
+.hero p{font-size:.98rem;color:#666666;max-width:480px;margin:0 auto 26px;line-height:1.7;}
+.hero-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:#ff4d8d;background:-webkit-linear-gradient(135deg,#ff80b0,#ff4d8d);background:linear-gradient(135deg,#ff80b0,#ff4d8d);color:#fff;border:none;padding:12px 26px;border-radius:30px;-webkit-border-radius:30px;-webkit-border-radius:30px;font-family:‘Sarabun’,sans-serif;font-size:.92rem;font-weight:600;cursor:pointer;box-shadow:0 4px 16px rgba(255,77,141,.35);transition:all .2s;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(255,77,141,.45);}
+.btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none;}
+
+/* SECTION */
+.section{position:relative;z-index:1;padding:40px 24px;max-width:1100px;margin:0 auto;}
+.section-title{font-family:‘Mitr’,sans-serif;font-size:1.55rem;font-weight:600;color:#ff4d8d !important;text-align:center;margin-bottom:6px;}
+.section-sub{text-align:center;color:#666666;margin-bottom:28px;font-size:.92rem;}
+
+/* TICKER */
+.review-ticker-wrap{overflow:hidden;padding:4px 0 14px;mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);}
+.review-ticker{display:flex;gap:12px;width:max-content;animation:tickerScroll 32s linear infinite;}
+.review-ticker:hover{animation-play-state:paused;}
+@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-card{background:#fff;border-radius:13px;-webkit-border-radius:13px;padding:12px 14px;width:200px;flex-shrink:0;border:1.5px solid #ffe0ee;box-shadow:0 2px 8px rgba(255,100,160,.10);}
+.ticker-card .th{display:flex;align-items:center;gap:7px;margin-bottom:6px;}
+.ticker-card .ta{width:28px;height:28px;border-radius:50%;-webkit-border-radius:50%;background:linear-gradient(135deg,#ffb3d1,#ff4d8d);display:flex;align-items:center;justify-content:center;font-size:.75rem;color:#fff;font-weight:700;flex-shrink:0;overflow:hidden;}
+.ticker-card .ta img{width:100%;height:100%;object-fit:cover;}
+.ticker-card .tn{font-weight:600;font-size:.76rem;color:#333333;}
+.ticker-card .ts{font-size:.66rem;color:#ff4d8d;}
+.ticker-card .tst{font-size:.72rem;color:#FFB84C;margin-bottom:3px;}
+.ticker-card .tt{font-size:.73rem;color:#666666;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px;}
+.service-card{background:#fff;border-radius:18px;-webkit-border-radius:18px;-webkit-border-radius:18px;padding:22px 18px;box-shadow:0 2px 8px rgba(255,100,160,.10);border:1.5px solid #ffe0ee;transition:all .25s;cursor:default;position:relative;overflow:hidden;}
+.service-card::before{content:’’;position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,#ff80b0,#ff4d8d);}
+.service-icon{font-size:1.9rem;margin-bottom:10px;}
+.service-title{font-family:‘Mitr’,sans-serif;font-size:.95rem;font-weight:600;color:#333333;margin-bottom:6px;}
+.service-desc{font-size:.81rem;color:#666666;line-height:1.5;margin-bottom:10px;}
+.service-price{font-weight:700;color:#ff4d8d;font-size:.9rem;}
+.badge-hot{position:absolute;top:11px;right:11px;background:#ff4d8d;color:#fff;font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:20px;-webkit-border-radius:20px;}
+
+/* STATUS PAGE */
+.status-wrap{max-width:680px;margin:0 auto;}
+.status-search{display:flex;gap:10px;margin-bottom:24px;}
+.status-search input{flex:1;padding:12px 16px;border:1.5px solid #ffb3d1;border-radius:10px;-webkit-border-radius:10px;font-family:‘Sarabun’,sans-serif;font-size:.92rem;background:#fff0f6;outline:none;transition:border .2s;}
+.status-search input:focus{border-color:#ff4d8d;background:#fff;}
+.status-search button{padding:12px 20px;background:linear-gradient(135deg,#ff80b0,#ff4d8d);color:#fff;border:none;border-radius:10px;-webkit-border-radius:10px;font-family:‘Sarabun’,sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;white-space:nowrap;}
+.status-card{background:#fff;border-radius:18px;-webkit-border-radius:18px;padding:22px 20px;box-shadow:0 2px 8px rgba(255,100,160,.10);border:1.5px solid #ffe0ee;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+.sc-left{display:flex;flex-direction:column;gap:4px;}
+.sc-id{font-size:.75rem;color:#aaaaaa;}
+.sc-name{font-weight:600;font-size:.92rem;color:#333333;}
+.sc-type{font-size:.8rem;color:#ff4d8d;}
+.sc-info{font-size:.78rem;color:#666666;}
+.status-badge{padding:4px 13px;border-radius:20px;-webkit-border-radius:20px;font-size:.78rem;font-weight:600;}
+.status-pending{background:#fff3cd;color:#856404;}
+.status-doing{background:#cce5ff;color:#004085;}
+.status-done{background:#d4edda;color:#155724;}
+.no-result{text-align:center;color:#aaaaaa;padding:32px;font-size:.9rem;}
+
+/* FORMS */
+.form-group{margin-bottom:15px;}
+.form-label{display:block;font-size:.86rem;font-weight:600;color:#333333;margin-bottom:5px;}
+.form-input,.form-select,.form-textarea{width:100%;padding:10px 13px;border:1.5px solid #ffb3d1;border-radius:10px;-webkit-border-radius:10px;font-family:‘Sarabun’,sans-serif;font-size:.88rem;color:#333333;background:#fff0f6;transition:all .2s;outline:none;}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:#ff4d8d;background:#fff;box-shadow:0 0 0 3px rgba(255,77,141,.09);}
+.form-textarea{resize:vertical;min-height:75px;}
+.submit-btn{width:100%;padding:13px;background:#ff4d8d;background:linear-gradient(135deg,#ff80b0,#ff4d8d);color:#fff;border:none;border-radius:30px;-webkit-border-radius:30px;-webkit-border-radius:30px;font-family:‘Mitr’,sans-serif;font-size:.95rem;font-weight:600;cursor:pointer;box-shadow:0 4px 16px rgba(255,77,141,.28);transition:all .2s;margin-top:6px;}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(255,77,141,.38);}
+.submit-btn:disabled{opacity:.5;cursor:not-allowed;transform:none;}
+
+/* SERVICE CHECKBOXES */
+.service-checks{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.svc-label{display:flex;align-items:center;gap:8px;padding:9px 11px;border:1.5px solid #ffb3d1;border-radius:10px;-webkit-border-radius:10px;cursor:pointer;font-size:.82rem;color:#555555;transition:all .2s;user-select:none;background:#fff0f6;}
+.svc-label:hover{border-color:#ff80b0;background:#ffe0ee;}
+.svc-label.selected{border-color:#ff4d8d;background:#ffe0ee;color:#ff4d8d;font-weight:600;}
+
+/* PAYMENT */
+.pay-opts{display:flex;gap:10px;margin-bottom:0;}
+.pay-opt{flex:1;padding:10px 12px;border:1.5px solid #ffb3d1;border-radius:10px;-webkit-border-radius:10px;cursor:pointer;text-align:center;font-size:.85rem;font-weight:600;color:#666666;transition:all .2s;background:#fff0f6;}
+.pay-opt.selected{border-color:#ff4d8d;background:#ffe0ee;color:#ff4d8d;}
+.cash-warn{background:#fffbea;border:1.5px solid #f6d860;border-radius:10px;-webkit-border-radius:10px;padding:11px 14px;margin-top:10px;font-size:.82rem;color:#7d6000;line-height:1.55;display:none;}
+.cash-warn.show{display:block;}
+.cash-ack{display:flex;align-items:center;gap:7px;margin-top:8px;cursor:pointer;font-size:.82rem;font-weight:600;}
+.cash-ack input{width:16px;height:16px;accent-color:#ff4d8d;}
+.qr-section{margin-top:10px;display:none;text-align:center;}
+.qr-section.show{display:block;}
+.qr-placeholder{width:160px;height:160px;margin:0 auto 10px;background:linear-gradient(135deg,#ffe0ee,#ffb3d1);border-radius:14px;-webkit-border-radius:14px;display:flex;align-items:center;justify-content:center;border:2px dashed #ff80b0;font-size:.8rem;color:#ff4d8d;text-align:center;padding:10px;overflow:hidden;}
+.qr-placeholder img{width:100%;height:100%;object-fit:cover;border-radius:10px;-webkit-border-radius:10px;}
+.slip-upload{margin-top:8px;}
+.slip-upload label{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#ffe0ee;border:1.5px solid #ffb3d1;border-radius:20px;-webkit-border-radius:20px;cursor:pointer;font-size:.8rem;color:#ff4d8d;font-weight:600;transition:background .2s;}
+.slip-upload label:hover{background:#ffb3d1;}
+.slip-upload input{display:none;}
+.slip-preview{margin-top:8px;font-size:.76rem;color:#666666;}
+
+/* STAR RATING */
+.star-rating{display:flex;gap:4px;}
+.star-rating button{font-size:1.4rem;background:none;border:none;cursor:pointer;transition:transform .15s;color:#ddd;}
+.star-rating button.active{color:#FFB84C;}
+.star-rating button:hover{transform:scale(1.2);}
+
+/* ADMIN */
+.admin-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:13px;margin-bottom:24px;}
+.stat-card{background:#fff;border-radius:18px;-webkit-border-radius:18px;-webkit-border-radius:18px;padding:18px 16px;box-shadow:0 2px 8px rgba(255,100,160,.10);border:1.5px solid #ffe0ee;display:flex;align-items:center;gap:12px;}
+.stat-icon{width:44px;height:44px;border-radius:12px;-webkit-border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;background:#ffe0ee;flex-shrink:0;}
+.stat-num{font-family:‘Mitr’,sans-serif;font-size:1.6rem;font-weight:700;color:#ff4d8d;}
+.stat-label{font-size:.74rem;color:#666666;}
+.orders-table-wrap{background:#fff;border-radius:18px;-webkit-border-radius:18px;box-shadow:0 2px 8px rgba(255,100,160,.10);border:1.5px solid #ffe0ee;overflow:hidden;margin-bottom:20px;}
+.table-header{padding:14px 20px;border-bottom:1.5px solid #ffe0ee;display:flex;align-items:center;justify-content:space-between;}
+.table-title{font-family:‘Mitr’,sans-serif;font-size:.95rem;font-weight:600;color:#333333;}
+table{width:100%;border-collapse:collapse;}
+th{text-align:left;padding:10px 14px;background:#fff0f6;font-size:.76rem;font-weight:600;color:#666666;border-bottom:1.5px solid #ffe0ee;}
+td{padding:11px 14px;font-size:.8rem;border-bottom:1px solid #fff0f6;color:#555555;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:#fff0f6;}
+
+/* SETTINGS CARD */
+.settings-card{background:#fff;border-radius:18px;-webkit-border-radius:18px;-webkit-border-radius:18px;padding:22px 20px;box-shadow:0 2px 8px rgba(255,100,160,.10);border:1.5px solid #ffe0ee;margin-bottom:18px;}
+.settings-title{font-family:‘Mitr’,sans-serif;font-size:1rem;font-weight:600;color:#ff4d8d;margin-bottom:14px;display:flex;align-items:center;gap:7px;}
+.price-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;}
+.price-item label{display:block;font-size:.78rem;font-weight:600;color:#666666;margin-bottom:4px;}
+.price-item input{width:100%;padding:8px 11px;border:1.5px solid #ffb3d1;border-radius:8px;-webkit-border-radius:8px;font-size:.84rem;font-family:‘Sarabun’,sans-serif;background:#fff0f6;outline:none;transition:border .2s;}
+.price-item input:focus{border-color:#ff4d8d;background:#fff;}
+.save-btn{padding:9px 22px;background:linear-gradient(135deg,#ff80b0,#ff4d8d);color:#fff;border:none;border-radius:20px;-webkit-border-radius:20px;font-family:‘Sarabun’,sans-serif;font-size:.87rem;font-weight:600;cursor:pointer;transition:all .2s;margin-top:12px;}
+.save-btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(255,77,141,.3);}
+.tg-row{display:flex;gap:8px;align-items:flex-end;}
+.tg-row .form-input{flex:1;}
+
+/* SOCIAL FOOTER */
+.social-section{background:#fff;border-top:1.5px solid #ffe0ee;padding:28px 24px;text-align:center;}
+.social-title{font-family:‘Mitr’,sans-serif;font-size:1rem;font-weight:600;color:#ff4d8d;margin-bottom:14px;}
+.social-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+.social-link{display:flex;flex-direction:column;align-items:center;gap:5px;text-decoration:none;color:#666666;font-size:.75rem;transition:all .2s;}
+.social-link:hover{color:#ff4d8d;transform:translateY(-3px);}
+.social-icon{width:46px;height:46px;border-radius:50%;-webkit-border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid #ffe0ee;background:#fff0f6;transition:all .2s;}
+.social-link:hover .social-icon{transform:scale(1.1);box-shadow:0 4px 14px rgba(0,0,0,.15);}
+
+/* MODALS */
+.modal-overlay{position:fixed;inset:0;background:rgba(50,5,25,.45);backdrop-filter:blur(5px);z-index:200;display:flex;align-items:center;justify-content:center;padding:14px;}
+.modal-overlay.hidden{display:none;}
+.modal{background:#fff;border-radius:18px;-webkit-border-radius:18px;-webkit-border-radius:18px;width:100%;max-width:450px;box-shadow:0 8px 40px rgba(255,100,160,.22);border:1.5px solid #ffe0ee;position:relative;max-height:92vh;display:flex;flex-direction:column;overflow:hidden;}
+.modal-header{padding:22px 22px 0;flex-shrink:0;border-radius:18px 18px 0 0;-webkit-border-radius:18px 18px 0 0;background:#fff;}
+.modal-body{padding:14px 22px 22px;overflow-y:auto;flex:1;}
+.modal-body::-webkit-scrollbar{width:4px;}
+.modal-body::-webkit-scrollbar-thumb{background:#ffb3d1;border-radius:4px;}
+.modal-close{position:absolute;top:14px;right:14px;background:#ffe0ee;border:none;width:28px;height:28px;border-radius:50%;-webkit-border-radius:50%;font-size:.85rem;cursor:pointer;color:#ff4d8d;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:5;}
+.modal-close:hover{background:#ffb3d1;}
+.modal-title{font-family:‘Mitr’,sans-serif;font-size:1.2rem;font-weight:600;color:#ff4d8d;margin-bottom:4px;}
+.modal-sub{font-size:.8rem;color:#666666;margin-bottom:16px;}
+.tabs{display:flex;gap:6px;margin-bottom:16px;}
+.tab-btn{flex:1;padding:8px;border-radius:10px;-webkit-border-radius:10px;border:1.5px solid #ffb3d1;background:#fff;color:#666666;font-family:‘Sarabun’,sans-serif;font-size:.8rem;font-weight:600;cursor:pointer;transition:all .2s;}
+.tab-btn.active{background:#ff4d8d;color:#fff;border-color:#ff4d8d;}
+
+/* NOTICE POPUP */
+.notice-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(50,5,25,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:500;display:flex;align-items:center;justify-content:center;padding:18px;}
+.notice-overlay.hidden{display:none;}
+.notice-box{background:#fff;border-radius:22px;-webkit-border-radius:22px;-webkit-border-radius:22px;padding:30px 26px;max-width:440px;width:100%;box-shadow:0 12px 50px rgba(255,77,141,.25);border:2px solid #ffb3d1;animation:popIn .4s cubic-bezier(.175,.885,.32,1.275);}
+@keyframes popIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+.notice-icon{font-size:2.3rem;text-align:center;margin-bottom:8px;}
+.notice-title{font-family:‘Mitr’,sans-serif;font-size:1.2rem;font-weight:700;color:#ff4d8d;text-align:center;margin-bottom:14px;}
+.notice-content{background:#fff0f6;border-radius:12px;-webkit-border-radius:12px;padding:14px 16px;margin-bottom:16px;border:1.5px solid #ffe0ee;}
+.notice-content p{font-size:.84rem;color:#555555;line-height:1.65;margin-bottom:0;}
+.notice-content p strong{color:#ff4d8d;}
+.notice-content ul{padding-left:16px;margin-top:7px;}
+.notice-content ul li{font-size:.82rem;color:#555555;line-height:1.65;margin-bottom:3px;}
+.notice-mute{display:flex;align-items:center;gap:8px;margin-bottom:16px;cursor:pointer;}
+.notice-mute input{width:16px;height:16px;accent-color:#ff4d8d;cursor:pointer;}
+.notice-mute span{font-size:.8rem;color:#666666;}
+.notice-btn{width:100%;padding:13px;background:linear-gradient(135deg,#ff80b0,#ff4d8d);color:#fff;border:none;border-radius:30px;-webkit-border-radius:30px;font-family:‘Mitr’,sans-serif;font-size:.95rem;font-weight:600;cursor:pointer;box-shadow:0 4px 16px rgba(255,77,141,.28);transition:all .2s;}
+.notice-btn:hover{transform:translateY(-2px);}
+
+/* PROFILE MODAL */
+.profile-pic-upload{text-align:center;margin-bottom:16px;}
+.profile-big-avatar{width:80px;height:80px;border-radius:50%;-webkit-border-radius:50%;border:3px solid #ff80b0;margin:0 auto 10px;background:#ffe0ee;display:flex;align-items:center;justify-content:center;font-size:2rem;color:#ff4d8d;overflow:hidden;cursor:pointer;transition:border-color .2s;}
+.profile-big-avatar:hover{border-color:#ff4d8d;}
+.profile-big-avatar img{width:100%;height:100%;object-fit:cover;}
+.profile-upload-hint{font-size:.76rem;color:#aaaaaa;}
+
+/* ALERT */
+.alert{position:fixed;top:72px;right:16px;z-index:400;background:#fff;border:1.5px solid #ffb3d1;border-radius:12px;-webkit-border-radius:12px;padding:11px 16px;box-shadow:0 4px 20px rgba(255,100,160,.18);font-size:.84rem;font-weight:500;color:#ff4d8d;animation:slideIn .3s ease;max-width:270px;}
+@keyframes slideIn{from{transform:translateX(110%);opacity:0}to{transform:none;opacity:1}}
+
+/* WRITE REVIEW BTN */
+.write-review-btn{display:flex;align-items:center;justify-content:center;gap:7px;margin:20px auto 0;padding:11px 24px;background:#fff;border:2px solid #ff80b0;border-radius:30px;-webkit-border-radius:30px;color:#ff4d8d;font-family:‘Sarabun’,sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;transition:all .2s;}
+.write-review-btn:hover{background:#fff0f6;transform:translateY(-2px);}
+
+/* LOCK NOTICE */
+.lock-notice{background:#ffe0ee;border:1.5px dashed #ff80b0;border-radius:12px;-webkit-border-radius:12px;padding:13px 16px;text-align:center;font-size:.84rem;color:#ff4d8d;font-weight:600;margin-bottom:20px;}
+.lock-notice a{color:#ff1a6a;cursor:pointer;text-decoration:underline;}
+
+/* EVENT PAGE */
+.event-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;}
+.event-card{background:#fff;border-radius:18px;-webkit-border-radius:18px;overflow:hidden;box-shadow:0 2px 8px rgba(255,100,160,.10);border:1.5px solid #ffe0ee;transition:all .25s;}
+.event-card:hover{transform:translateY(-3px);box-shadow:0 4px 20px rgba(255,100,160,.18);}
+.event-banner{height:110px;background:linear-gradient(135deg,#ff80b0,#ff4d8d);display:flex;align-items:center;justify-content:center;font-size:2.8rem;position:relative;}
+.event-status-badge{position:absolute;top:10px;right:10px;padding:3px 10px;border-radius:20px;-webkit-border-radius:20px;font-size:.68rem;font-weight:700;color:#fff;}
+.ev-active{background:#27ae60;}
+.ev-ended{background:#aaa;}
+.ev-soon{background:#f39c12;}
+.event-body{padding:16px 18px;}
+.event-title{font-family:‘Mitr’,sans-serif;font-size:1rem;font-weight:600;color:#333333;margin-bottom:6px;}
+.event-desc{font-size:.82rem;color:#666666;line-height:1.55;margin-bottom:12px;}
+.event-meta{font-size:.76rem;color:#aaaaaa;margin-bottom:10px;}
+.event-reward{display:inline-flex;align-items:center;gap:5px;background:#fff0f6;border:1.5px solid #ffb3d1;border-radius:20px;-webkit-border-radius:20px;padding:4px 12px;font-size:.78rem;font-weight:600;color:#ff4d8d;margin-bottom:12px;}
+.event-join-btn{width:100%;padding:9px;background:linear-gradient(135deg,#ff80b0,#ff4d8d);color:#fff;border:none;border-radius:20px;-webkit-border-radius:20px;font-family:‘Sarabun’,sans-serif;font-size:.84rem;font-weight:600;cursor:pointer;transition:all .2s;}
+.event-join-btn:hover{transform:translateY(-1px);box-shadow:0 3px 12px rgba(255,77,141,.3);}
+.event-join-btn:disabled{opacity:.5;cursor:not-allowed;transform:none;}
+
+/* LEVEL PAGE */
+.level-profile-card{background:#fff;border-radius:18px;-webkit-border-radius:18px;padding:26px 24px;box-shadow:0 2px 8px rgba(255,100,160,.10);border:1.5px solid #ffe0ee;max-width:560px;margin:0 auto 24px;}
+.lv-top{display:flex;align-items:center;gap:18px;margin-bottom:20px;}
+.lv-avatar{width:64px;height:64px;border-radius:50%;-webkit-border-radius:50%;border:3px solid #ff80b0;background:#ffe0ee;display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;overflow:hidden;}
+.lv-avatar img{width:100%;height:100%;object-fit:cover;}
+.lv-info{flex:1;}
+.lv-name{font-family:‘Mitr’,sans-serif;font-size:1.05rem;font-weight:600;color:#333333;}
+.lv-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 12px;border-radius:20px;-webkit-border-radius:20px;font-size:.76rem;font-weight:700;margin-top:4px;color:#fff;}
+.lv-xp-wrap{margin-bottom:8px;}
+.lv-xp-label{display:flex;justify-content:space-between;font-size:.8rem;color:#666666;margin-bottom:6px;}
+.lv-bar-bg{height:14px;background:#ffe0ee;border-radius:20px;-webkit-border-radius:20px;overflow:hidden;}
+.lv-bar-fill{height:100%;background:linear-gradient(90deg,#ff80b0,#ff4d8d);border-radius:20px;-webkit-border-radius:20px;transition:width .8s ease;}
+.lv-next{font-size:.76rem;color:#aaaaaa;margin-top:5px;}
+
+.level-tiers{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px;max-width:560px;margin:0 auto 24px;}
+.tier-card{background:#fff;border-radius:14px;-webkit-border-radius:14px;padding:14px 12px;text-align:center;border:2px solid #ffe0ee;transition:all .2s;}
+.tier-card.current{border-color:#ff4d8d;background:#fff0f6;box-shadow:0 0 0 3px rgba(255,77,141,.12);}
+.tier-card.unlocked{border-color:#d4edda;background:#f0fff4;}
+.tier-icon{font-size:1.8rem;margin-bottom:6px;}
+.tier-name{font-family:‘Mitr’,sans-serif;font-size:.82rem;font-weight:600;color:#333333;margin-bottom:3px;}
+.tier-req{font-size:.7rem;color:#aaaaaa;}
+.tier-reward{font-size:.7rem;color:#ff4d8d;font-weight:600;margin-top:4px;}
+
+.lv-history{background:#fff;border-radius:18px;-webkit-border-radius:18px;box-shadow:0 2px 8px rgba(255,100,160,.10);border:1.5px solid #ffe0ee;max-width:560px;margin:0 auto;}
+.lv-history-header{padding:14px 18px;border-bottom:1px solid #ffe0ee;font-family:‘Mitr’,sans-serif;font-size:.9rem;font-weight:600;color:#333333;}
+.lv-history-item{display:flex;align-items:center;justify-content:space-between;padding:10px 18px;border-bottom:1px solid #fff0f6;font-size:.82rem;}
+.lv-history-item:last-child{border-bottom:none;}
+.lv-xp-gain{color:#27ae60;font-weight:700;}
+
+/* ADMIN EVENT SETTINGS */
+.event-admin-item{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:12px 14px;background:#fff0f6;border-radius:10px;-webkit-border-radius:10px;margin-bottom:10px;border:1px solid #ffe0ee;}
+.event-admin-info{flex:1;}
+.event-admin-title{font-weight:600;font-size:.86rem;color:#333333;}
+.event-admin-meta{font-size:.74rem;color:#aaaaaa;margin-top:2px;}
+
+@media(max-width:580px){
+.level-tiers{grid-template-columns:repeat(3,1fr);}
+}
+
+@media(max-width:768px){
+nav{flex-wrap:wrap;padding:8px 12px;gap:6px;}
+.nav-logo{font-size:.95rem;flex-basis:auto;}
+.nav-right{flex-wrap:wrap;gap:3px;}
+.nav-btn{font-size:.74rem;padding:5px 8px;}
+}
+@media(max-width:580px){
+nav{padding:6px 10px;}
+.nav-logo{font-size:.9rem;}
+.nav-btn{font-size:.72rem;padding:4px 7px;}
+.modal{max-width:100%;border-radius:18px 18px 0 0;position:fixed;bottom:0;left:0;right:0;max-height:95vh;}
+.modal-overlay{align-items:flex-end;padding:0;}
+.service-checks{grid-template-columns:1fr;}
+.pay-opts{flex-direction:column;}
+.price-grid{grid-template-columns:1fr;}
+}
+</style>
+
+</head>
+<body>
+
+<!-- NOTICE POPUP -->
+
+<div id="notice-overlay" class="notice-overlay">
+  <div class="notice-box">
+    <div class="notice-icon">📋</div>
+    <div class="notice-title">ก่อนใช้งาน โปรดอ่าน!</div>
+    <div class="notice-content">
+      <p><strong>ก่อนใช้เว็บจ้างงาน คุณลูกค้าโปรดอ่าน</strong></p>
+      <ul>
+        <li>ลูกค้าต้องมีระยะเวลาส่งงานเหลืออย่างน้อย <strong>1–2 วัน</strong> จึงจะสามารถใช้บริการได้</li>
+        <li>เว็บไซต์ของเรามี <strong>กิจกรรมต่างๆ ทุกเดือน</strong> ให้ลูกค้าเข้าร่วม เพื่อรับโค้ดส่วนลด</li>
+        <li>หากพบพฤติกรรมที่ไม่เหมาะสมจากเว็บไซต์หรือแอดมิน ลูกค้าสามารถ <strong>ร้องเรียนได้</strong> โดยต้องมีหลักฐานประกอบอย่างชัดเจน</li>
+      </ul>
+    </div>
+    <label class="notice-mute">
+      <input type="checkbox" id="notice-mute-chk"/>
+      <span>หยุดแจ้งเตือนข้อความนี้ 24 ชั่วโมง</span>
+    </label>
+    <button class="notice-btn" onclick="closeNotice()">✅ รับทราบ</button>
+  </div>
+</div>
+
+<!-- NAV -->
+
+<nav>
+  <div class="nav-logo" onclick="goHome()"><span>🌸</span> ร้านกู้ชีพงานค้าง</div>
+  <div class="nav-right">
+    <button class="nav-btn active" id="nav-home" onclick="goHome()">หน้าหลัก</button>
+    <button class="nav-btn" id="nav-event" onclick="showPage('event',this)">🎉 กิจกรรม</button>
+    <button class="nav-btn" id="nav-level" onclick="requireLoginThen(()=>showPage('level',document.getElementById('nav-level')))">⭐ เลเวล</button>
+    <button class="nav-btn" id="nav-status" onclick="showPage('status',this)" style="display:none">📦 สถานะงาน</button>
+    <div id="nav-auth-area">
+      <button class="nav-btn nav-btn-pink" onclick="openModal('login')">เข้าสู่ระบบ</button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HOME -->
+
+<div id="page-home" class="page active">
+  <div class="hero">
+    <div class="hero-badge">✨ บริการด่วน ส่งไว ไม่มีบ่าย</div>
+    <h1>กู้ชีพงานค้าง<br/><span class="accent">ทุกงาน เราช่วยได้ 💖</span></h1>
+    <p>รับทำงานค้าง แก้ไขข้อสอบ งานแก้ 0/ร/มส ใบงาน Canva และสไลด์ทุกรูปแบบ พร้อมส่งภายในกำหนด</p>
+    <div class="hero-btns">
+      <button class="btn-primary" id="hero-order-btn" onclick="openOrderModal()">🛒 สั่งงานเลย!</button>
+    </div>
+  </div>
+
+  <!-- TICKER -->
+
+  <div class="section" style="padding-bottom:0">
+    <div class="section-title">💬 รีวิวจากลูกค้า</div>
+    <div class="section-sub">ลูกค้าของเราพูดว่า...</div>
+    <div class="review-ticker-wrap"><div class="review-ticker" id="home-reviews-ticker"></div></div>
+    <div style="text-align:center;margin-top:12px">
+      <button class="write-review-btn" onclick="requireLoginThen(()=>openModal('review'))">✏️ เขียนรีวิว</button>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+
+  <div class="section">
+    <div class="section-title">📚 บริการของเรา</div>
+    <div class="section-sub">เลือกบริการที่คุณต้องการ เราพร้อมช่วยเหลือทันที!</div>
+    <div class="services-grid" id="services-grid"></div>
+  </div>
+</div>
+
+<!-- PAGE STATUS -->
+
+<div id="page-status" class="page">
+  <div class="section">
+    <div class="section-title">📦 เช็คสถานะงาน</div>
+    <div class="section-sub">ดูสถานะงานทั้งหมดของคุณ</div>
+    <div class="status-wrap">
+
+```
+  <!-- กล่องแสดงชื่อผู้ใช้ปัจจุบัน -->
+  <div id="status-user-info" style="background:#fff;border-radius:14px;-webkit-border-radius:14px;padding:14px 18px;margin-bottom:16px;border:1.5px solid #ffb3d1;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+    <div style="display:flex;align-items:center;gap:10px">
+      <span style="font-size:1.4rem" id="status-user-icon">👤</span>
+      <div>
+        <div style="font-weight:600;font-size:.9rem;color:#333" id="status-user-name">-</div>
+        <div style="font-size:.75rem;color:#aaa" id="status-user-sub">กรุณาเข้าสู่ระบบก่อน</div>
+      </div>
+    </div>
+    <button onclick="loadMyOrders()" style="padding:8px 16px;background:linear-gradient(135deg,#ff80b0,#ff4d8d);color:#fff;border:none;border-radius:20px;-webkit-border-radius:20px;font-family:'Sarabun',sans-serif;font-size:.84rem;font-weight:600;cursor:pointer">🔄 โหลดงานของฉัน</button>
+  </div>
+
+  <!-- ช่องค้นหาชื่อ (ใช้เมื่อต้องการค้นชื่ออื่น) -->
+  <div style="display:flex;gap:8px;margin-bottom:16px">
+    <input id="status-search-input" type="text" placeholder="หรือค้นหาด้วยชื่อ-นามสกุล..."
+      style="flex:1;padding:10px 14px;border:1.5px solid #ffb3d1;border-radius:10px;-webkit-border-radius:10px;font-family:'Sarabun',sans-serif;font-size:.88rem;background:#fff0f6;outline:none"/>
+    <button onclick="searchStatus()" style="padding:10px 16px;background:#ff4d8d;color:#fff;border:none;border-radius:10px;-webkit-border-radius:10px;font-family:'Sarabun',sans-serif;font-size:.84rem;font-weight:600;cursor:pointer;white-space:nowrap">🔍 ค้นหา</button>
+  </div>
+
+  <div id="status-results"></div>
+</div>
+```
+
+  </div>
+</div>
+
+<!-- PAGE EVENT -->
+
+<div id="page-event" class="page">
+  <div class="section">
+    <div class="section-title">🎉 กิจกรรมรับโค้ดส่วนลด</div>
+    <div class="section-sub">ทำกิจกรรมและรับโค้ดส่วนลดไปใช้ได้เลย!</div>
+    <div class="event-grid" id="event-grid"></div>
+    <div id="event-empty" style="display:none;text-align:center;color:#aaaaaa;padding:40px;font-size:.9rem">
+      ยังไม่มีกิจกรรมในขณะนี้ 😢<br/>ติดตามกิจกรรมใหม่เร็วๆ นี้!
+    </div>
+  </div>
+</div>
+
+<!-- PAGE LEVEL -->
+
+<div id="page-level" class="page">
+  <div class="section">
+    <div class="section-title">⭐ ระบบเลเวลสมาชิก</div>
+    <div class="section-sub">สะสม XP จากการสั่งงาน เพื่อรับสิทธิพิเศษ!</div>
+
+```
+<!-- USER LEVEL CARD -->
+<div class="level-profile-card" id="lv-profile-card">
+  <div class="lv-top">
+    <div class="lv-avatar" id="lv-av">🌸</div>
+    <div class="lv-info">
+      <div class="lv-name" id="lv-name">-</div>
+      <div class="lv-badge" id="lv-badge" style="background:#ff4d8d">🌱 Newbie</div>
+    </div>
+    <div style="text-align:right">
+      <div style="font-family:'Mitr',sans-serif;font-size:1.4rem;font-weight:700;color:#ff4d8d" id="lv-num">1</div>
+      <div style="font-size:.72rem;color:#aaaaaa">เลเวล</div>
+    </div>
+  </div>
+  <div class="lv-xp-wrap">
+    <div class="lv-xp-label">
+      <span>XP สะสม</span>
+      <span id="lv-xp-text">0 / 100 XP</span>
+    </div>
+    <div class="lv-bar-bg">
+      <div class="lv-bar-fill" id="lv-bar" style="width:0%"></div>
+    </div>
+    <div class="lv-next" id="lv-next-text">อีก 100 XP จะขึ้นเลเวล 2</div>
+  </div>
+  <div id="lv-reward-box" style="display:none;margin-top:12px;padding:10px 14px;background:linear-gradient(135deg,#fff9c4,#fff3b0);border:1.5px solid #f6d860;border-radius:10px;font-size:.82rem;color:#7d6000">
+    🎁 <strong>รางวัลระดับปัจจุบัน:</strong> <span id="lv-reward-text"></span>
+  </div>
+</div>
+
+<!-- TIER TABLE -->
+<div style="max-width:560px;margin:0 auto 10px;font-family:'Mitr',sans-serif;font-size:.88rem;font-weight:600;color:#555555">🏆 ระดับทั้งหมด</div>
+<div class="level-tiers" id="level-tiers"></div>
+
+<!-- XP HISTORY -->
+<div class="lv-history" id="lv-history-wrap">
+  <div class="lv-history-header">📋 ประวัติ XP</div>
+  <div id="lv-history-list"></div>
+</div>
+```
+
+  </div>
+</div>
+
+<!-- PAGE ADMIN -->
+
+<div id="page-admin" class="page">
+  <div class="section">
+    <div class="section-title">🛠️ แดชบอร์ดแอดมิน</div>
+    <div class="section-sub">ภาพรวมร้านกู้ชีพงานค้าง</div>
+    <div class="admin-grid">
+      <div class="stat-card"><div class="stat-icon">📦</div><div><div class="stat-num" id="stat-orders">0</div><div class="stat-label">คำสั่งซื้อทั้งหมด</div></div></div>
+      <div class="stat-card"><div class="stat-icon">⏳</div><div><div class="stat-num" id="stat-pending">0</div><div class="stat-label">รอดำเนินการ</div></div></div>
+      <div class="stat-card"><div class="stat-icon">✅</div><div><div class="stat-num" id="stat-done">0</div><div class="stat-label">ส่งงานแล้ว</div></div></div>
+      <div class="stat-card"><div class="stat-icon">⭐</div><div><div class="stat-num" id="stat-rating">5.0</div><div class="stat-label">คะแนนเฉลี่ย</div></div></div>
+    </div>
+    <div class="orders-table-wrap">
+      <div class="table-header">
+        <div class="table-title">📋 รายการคำสั่งซื้อ</div>
+        <button class="btn-primary" style="padding:7px 14px;font-size:.78rem" onclick="refreshAdmin()">🔄 รีเฟรช</button>
+      </div>
+      <div style="overflow-x:auto"><table>
+        <thead><tr><th>#</th><th>ชื่อ</th><th>งาน</th><th>วิชา</th><th>Line ID</th><th>กำหนดส่ง</th><th>ชำระ</th><th>สถานะ</th><th>จัดการ</th></tr></thead>
+        <tbody id="admin-table-body"></tbody>
+      </table></div>
+    </div>
+
+```
+<!-- REVIEWS ADMIN TABLE -->
+<div class="orders-table-wrap" style="margin-bottom:20px">
+  <div class="table-header">
+    <div class="table-title">⭐ รีวิวทั้งหมด</div>
+    <button class="btn-primary" style="padding:7px 14px;font-size:.78rem" onclick="refreshAdmin()">🔄 รีเฟรช</button>
+  </div>
+  <div style="overflow-x:auto"><table>
+    <thead><tr><th>#</th><th>ชื่อ</th><th>บริการ</th><th>ดาว</th><th>รีวิว</th><th>วันที่</th><th>ลบ</th></tr></thead>
+    <tbody id="admin-reviews-body"></tbody>
+  </table></div>
+</div>
+
+<!-- SERVICE NAME SETTINGS -->
+<!-- MIN ORDER PRICE -->
+<div class="settings-card">
+  <div class="settings-title">💰 ราคาขั้นต่ำต่อการสั่งงาน</div>
+  <div style="font-size:.82rem;color:#666666;margin-bottom:12px">ลูกค้าจะถูกเก็บอย่างน้อยราคานี้เสมอ ไม่ว่าจะสั่งงานแค่หน้าเดียว</div>
+  <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:8px">
+      <input id="admin-min-price" type="number" min="0" value="20"
+        style="width:100px;padding:10px 14px;border:1.5px solid #ffb3d1;border-radius:10px;font-size:1rem;font-weight:700;color:#ff4d8d;text-align:center;background:#fff0f6;outline:none"
+        oninput="previewMinPrice(this.value)"/>
+      <span style="font-size:1rem;color:#666666">บาท</span>
+    </div>
+    <div id="min-price-preview" style="font-size:.82rem;color:#666666"></div>
+    <button class="save-btn" style="margin-top:0" onclick="saveMinPrice()">💾 บันทึก</button>
+  </div>
+</div>
+
+<div class="settings-card">
+  <div class="settings-title">🏷️ ตั้งค่าชื่อ & ราคาบริการ</div>
+  <div style="display:flex;align-items:center;gap:12px;background:#fff0f6;border:1.5px solid #ffb3d1;border-radius:10px;padding:10px 14px;margin-bottom:14px">
+    <span style="font-size:1rem">💰</span>
+    <div style="flex:1">
+      <div style="font-size:.8rem;font-weight:600;color:#555555">ราคาขั้นต่ำต่อการสั่งงาน (฿)</div>
+      <div style="font-size:.72rem;color:#aaaaaa">ลูกค้าจะถูกคิดอย่างน้อยราคานี้ แม้งานจะน้อยกว่า</div>
+    </div>
+    <input id="min-price-input" type="number" min="0" value="20"
+      style="width:70px;padding:7px 10px;border:1.5px solid #ffb3d1;border-radius:8px;font-size:.9rem;font-weight:700;color:#ff4d8d;text-align:center;background:#fff;outline:none"/>
+    <button class="save-btn" style="margin-top:0" onclick="saveMinPrice()">บันทึก</button>
+  </div>
+  <div class="price-grid" id="svc-settings-grid"></div>
+  <button class="save-btn" onclick="saveSvcSettings()">💾 บันทึก</button>
+</div>
+
+<!-- SOCIAL LINKS SETTINGS -->
+<div class="settings-card">
+  <div class="settings-title">🔗 ลิงก์โซเชียลมีเดีย</div>
+  <div class="price-grid">
+    <div class="price-item"><label>Facebook URL</label><input id="social-fb" placeholder="https://facebook.com/..."/></div>
+    <div class="price-item"><label>Instagram URL</label><input id="social-ig" placeholder="https://instagram.com/..."/></div>
+    <div class="price-item"><label>Line URL / ID</label><input id="social-line" placeholder="https://line.me/..."/></div>
+  </div>
+  <button class="save-btn" onclick="saveSocialLinks()">💾 บันทึกลิงก์</button>
+</div>
+
+<!-- QR CODE SETTINGS -->
+<div class="settings-card">
+  <div class="settings-title">📱 ตั้งค่า QR Code ชำระเงิน</div>
+  <div style="font-size:.82rem;color:#666666;margin-bottom:12px">อัปโหลดรูป QR Code PromptPay ของคุณ</div>
+  <input type="file" id="qr-upload-input" accept="image/*" style="display:none" onchange="handleQrUpload(this)"/>
+  <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+    <div style="width:90px;height:90px;border-radius:10px;border:2px dashed #ff80b0;background:#fff0f6;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer" onclick="document.getElementById('qr-upload-input').click()">
+      <img id="qr-admin-preview" src="" alt="" style="display:none;width:100%;height:100%;object-fit:cover"/>
+      <span id="qr-admin-placeholder" style="font-size:.75rem;color:#ff80b0;text-align:center;padding:6px">คลิกเพื่ออัปโหลด QR</span>
+    </div>
+    <button class="save-btn" style="margin-top:0" onclick="document.getElementById('qr-upload-input').click()">📷 เลือกรูป QR Code</button>
+  </div>
+</div>
+
+<!-- DISCOUNT CODE SETTINGS -->
+<div class="settings-card">
+  <div class="settings-title">🎁 จัดการโค้ดส่วนลด</div>
+  <div id="discount-codes-list"></div>
+  <div style="margin-top:14px;padding-top:14px;border-top:1px solid #ffe0ee">
+    <div style="font-size:.84rem;font-weight:600;color:#555555;margin-bottom:10px">➕ เพิ่มโค้ดใหม่</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
+      <div><label style="font-size:.76rem;color:#666666;display:block;margin-bottom:3px">โค้ด (ตัวพิมพ์ใหญ่)</label><input class="form-input" id="new-code" placeholder="เช่น SUMMER30" style="font-size:.82rem;text-transform:uppercase"/></div>
+      <div><label style="font-size:.76rem;color:#666666;display:block;margin-bottom:3px">ประเภท</label>
+        <select class="form-select" id="new-code-type" style="font-size:.82rem">
+          <option value="percent">% ลดเป็น %</option>
+          <option value="fixed">฿ ลดเป็นบาท</option>
+        </select>
+      </div>
+      <div><label style="font-size:.76rem;color:#666666;display:block;margin-bottom:3px">ค่าส่วนลด</label><input class="form-input" id="new-code-val" type="number" placeholder="เช่น 20" style="font-size:.82rem"/></div>
+      <div><label style="font-size:.76rem;color:#666666;display:block;margin-bottom:3px">ยอดขั้นต่ำ (฿)</label><input class="form-input" id="new-code-min" type="number" placeholder="0 = ไม่จำกัด" style="font-size:.82rem"/></div>
+      <div style="grid-column:1/-1;margin-top:4px">
+        <label style="display:flex;align-items:center;gap:10px;cursor:pointer;padding:10px 14px;background:#fff0f6;border-radius:10px;-webkit-border-radius:10px;border:1.5px solid #ffb3d1">
+          <input type="checkbox" id="new-code-allow-min" style="width:18px;height:18px;accent-color:#ff4d8d;cursor:pointer;flex-shrink:0"/>
+          <div>
+            <div style="font-size:.85rem;font-weight:600;color:#333">ใช้โค้ดนี้กับราคาขั้นต่ำได้</div>
+            <div style="font-size:.74rem;color:#aaa;margin-top:2px">ถ้าติ๊ก → ลูกค้าใช้โค้ดได้แม้ราคาจะติดขั้นต่ำ</div>
+          </div>
+        </label>
+      </div>
+    </div>
+    <button class="save-btn" onclick="addDiscountCode()">➕ เพิ่มโค้ด</button>
+  </div>
+</div>
+
+<!-- ADMIN EVENT SETTINGS -->
+<div class="settings-card">
+  <div class="settings-title">🎉 จัดการกิจกรรม</div>
+  <div id="events-admin-list" style="margin-bottom:14px"></div>
+  <div style="padding-top:14px;border-top:1px solid #ffe0ee">
+    <div style="font-size:.84rem;font-weight:600;color:#555555;margin-bottom:10px">➕ เพิ่มกิจกรรมใหม่</div>
+    <div class="price-grid">
+      <div class="price-item"><label>ชื่อกิจกรรม</label><input class="form-input" id="ev-title" placeholder="เช่น แชร์โพสต์รับโค้ด"/></div>
+      <div class="price-item"><label>ไอคอน (Emoji)</label><input class="form-input" id="ev-icon" placeholder="🎁" maxlength="2"/></div>
+      <div class="price-item"><label>คำอธิบาย</label><input class="form-input" id="ev-desc" placeholder="อธิบายวิธีเข้าร่วม..."/></div>
+      <div class="price-item"><label>รางวัล (โค้ดส่วนลด)</label><input class="form-input" id="ev-reward" placeholder="เช่น JULY30"/></div>
+      <div class="price-item"><label>สถานะ</label>
+        <select class="form-select" id="ev-status" style="font-size:.84rem">
+          <option value="active">🟢 กำลังดำเนินการ</option>
+          <option value="soon">🟡 เร็วๆ นี้</option>
+          <option value="ended">⚫ สิ้นสุดแล้ว</option>
+        </select>
+      </div>
+      <div class="price-item"><label>วันสิ้นสุด</label><input class="form-input" id="ev-end" type="date"/></div>
+    </div>
+    <button class="save-btn" onclick="addEvent()" style="margin-top:10px">➕ เพิ่มกิจกรรม</button>
+  </div>
+</div>
+
+<!-- ADMIN LEVEL SETTINGS -->
+<div class="settings-card">
+  <div class="settings-title">⭐ ตั้งค่าระบบเลเวล (XP ต่อการสั่งงาน)</div>
+  <div class="price-grid" style="margin-bottom:14px">
+    <div class="price-item"><label>XP ต่อการสั่งงาน 1 ครั้ง</label><input class="form-input" id="admin-xp-per-order" type="number" placeholder="10"/></div>
+    <div class="price-item"><label>XP ต่อการรีวิว 1 ครั้ง</label><input class="form-input" id="admin-xp-per-review" type="number" placeholder="5"/></div>
+  </div>
+  <div style="font-size:.82rem;font-weight:600;color:#555555;margin-bottom:10px">ระดับและรางวัล</div>
+  <div id="tier-admin-list"></div>
+  <button class="save-btn" onclick="saveLevelSettings()">💾 บันทึกตั้งค่าเลเวล</button>
+</div>
+
+<!-- TELEGRAM SETTINGS -->
+<div class="settings-card">
+  <div class="settings-title">📲 ตั้งค่า Telegram Webhook</div>
+  <div class="form-group"><label class="form-label">Bot Token</label><input class="form-input" id="tg-token" placeholder="123456:ABCdef..." style="font-size:.8rem"/></div>
+  <div class="form-group"><label class="form-label">Chat ID ของคุณ</label>
+    <div class="tg-row"><input class="form-input" id="tg-chatid" placeholder="เช่น 8548512042" style="font-size:.8rem"/>
+    <button class="save-btn" style="margin-top:0;white-space:nowrap" onclick="saveTelegram()">💾 บันทึก</button></div>
+  </div>
+  <p style="font-size:.74rem;color:#4CAF50">✅ Token ถูก hardcode แล้ว ทุกเครื่องส่งได้เลยโดยไม่ต้องตั้งค่า</p>
+</div>
+```
+
+  </div>
+</div>
+
+<!-- SOCIAL FOOTER -->
+
+<div class="social-section" id="social-footer">
+  <div class="social-title">📱 ติดตามและติดต่อเราที่นี่</div>
+  <div class="social-links">
+    <a class="social-link" id="social-link-fb" href="#" target="_blank">
+      <div class="social-icon" style="background:#1877F2;border-color:#1877F2">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </div>
+      <span>Facebook</span>
+    </a>
+    <a class="social-link" id="social-link-ig" href="#" target="_blank">
+      <div class="social-icon" style="background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%);border-color:#d6249f">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="white" stroke-width="2"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="white" stroke-width="2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <span>Instagram</span>
+    </a>
+    <a class="social-link" id="social-link-line" href="#" target="_blank">
+      <div class="social-icon" style="background:#06C755;border-color:#06C755">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      </div>
+      <span>Line</span>
+    </a>
+  </div>
+</div>
+
+<!-- ═══ MODALS ═══ -->
+
+<!-- LOGIN MODAL -->
+
+<div id="modal-login" class="modal-overlay hidden">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('login')">✕</button>
+      <div class="modal-title">🌸 เข้าสู่ระบบ</div>
+      <div class="modal-sub">เข้าสู่ระบบหรือสมัครสมาชิก</div>
+      <div class="tabs">
+        <button class="tab-btn active" id="tab-signin" onclick="switchAuthTab('signin')">🔑 เข้าสู่ระบบ</button>
+        <button class="tab-btn" id="tab-signup" onclick="switchAuthTab('signup')">✨ สมัครสมาชิก</button>
+        <button class="tab-btn" id="tab-admin" onclick="switchAuthTab('admin')">🛠️ แอดมิน</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div id="auth-signin">
+        <div class="form-group"><label class="form-label">ชื่อผู้ใช้</label><input class="form-input" id="li-user" type="text" placeholder="ชื่อผู้ใช้ของคุณ"/></div>
+        <div class="form-group"><label class="form-label">รหัสผ่าน</label><input class="form-input" id="li-pass" type="password" placeholder="รหัสผ่าน"/></div>
+        <button class="submit-btn" onclick="doSignin()">🔑 เข้าสู่ระบบ</button>
+      </div>
+      <div id="auth-signup" style="display:none">
+        <div class="form-group"><label class="form-label">ชื่อ-นามสกุล *</label><input class="form-input" id="su-name" type="text" placeholder="ชื่อ-นามสกุลของคุณ"/></div>
+        <div class="form-group"><label class="form-label">ชื่อผู้ใช้ *</label><input class="form-input" id="su-user" type="text" placeholder="ตั้งชื่อผู้ใช้"/></div>
+        <div class="form-group"><label class="form-label">รหัสผ่าน * (อย่างน้อย 6 ตัว)</label><input class="form-input" id="su-pass" type="password" placeholder="ตั้งรหัสผ่าน"/></div>
+        <div class="form-group"><label class="form-label">ยืนยันรหัสผ่าน *</label><input class="form-input" id="su-pass2" type="password" placeholder="กรอกรหัสผ่านอีกครั้ง"/></div>
+        <button class="submit-btn" onclick="doSignup()">✨ สมัครสมาชิก</button>
+      </div>
+      <div id="auth-admin" style="display:none">
+        <div class="form-group"><label class="form-label">ชื่อผู้ใช้แอดมิน</label><input class="form-input" id="ad-user" type="text" placeholder="admin"/></div>
+        <div class="form-group"><label class="form-label">รหัสผ่าน</label><input class="form-input" id="ad-pass" type="password" placeholder="รหัสผ่านแอดมิน"/></div>
+        <button class="submit-btn" onclick="doAdminLogin()">🛠️ เข้าสู่ระบบแอดมิน</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ORDER MODAL -->
+
+<div id="modal-order" class="modal-overlay hidden">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('order')">✕</button>
+      <div class="modal-title">🛒 สั่งงานกับเรา</div>
+      <div class="modal-sub">กรอกรายละเอียดให้ครบ เราจะติดต่อกลับโดยเร็ว!</div>
+    </div>
+    <div class="modal-body">
+      <div class="form-group"><label class="form-label">ชื่อ-นามสกุล *</label><input class="form-input" id="or-name" type="text" placeholder="ชื่อ-นามสกุลของคุณ"/></div>
+      <div class="form-group"><label class="form-label">ไอดีไลน์</label><input class="form-input" id="or-line" type="text" placeholder="เช่น @yourlineid"/></div>
+
+```
+  <div class="form-group">
+    <label class="form-label">ประเภทงาน * <span style="font-size:.72rem;color:#aaaaaa;font-weight:400">(เลือกได้สูงสุด 2 งาน)</span></label>
+    <div class="service-checks" id="order-svc-checks"></div>
+  </div>
+
+  <div class="form-group"><label class="form-label">วิชา</label><input class="form-input" id="or-subject" type="text" placeholder="เช่น คณิตศาสตร์ ม.4"/></div>
+  <div class="form-group"><label class="form-label">กำหนดส่ง *</label><input class="form-input" id="or-deadline" type="date"/></div>
+  <div class="form-group"><label class="form-label">รายละเอียดงาน *</label><textarea class="form-textarea" id="or-detail" placeholder="อธิบายงานให้ละเอียดที่สุด..."></textarea></div>
+
+  <!-- PAYMENT -->
+  <div class="form-group">
+    <label class="form-label">วิธีชำระเงิน *</label>
+    <div class="pay-opts">
+      <div class="pay-opt" id="pay-cash" onclick="selectPay('cash')">💵 เงินสด</div>
+      <div class="pay-opt" id="pay-transfer" onclick="selectPay('transfer')">📲 โอนจ่าย</div>
+    </div>
+    <!-- CASH WARNING -->
+    <div class="cash-warn" id="cash-warn">
+      ⚠️ <strong>เตือน:</strong> กรุณาชำระเงินภายใน 1–2 วัน หลังจากยืนยันการจ้างงาน
+      <label class="cash-ack"><input type="checkbox" id="cash-ack-chk"/> รับทราบ</label>
+    </div>
+    <!-- QR SECTION -->
+    <div class="qr-section" id="qr-section">
+      <div class="qr-placeholder" id="qr-display">
+        <img id="qr-img" src="" alt="" style="display:none;width:100%;height:100%;object-fit:contain;border-radius:8px"/>
+        <span id="qr-placeholder-text">QR Code PromptPay<br/>(ตั้งค่าใน Admin)</span>
+      </div>
+      <p style="font-size:.76rem;color:#aaaaaa;margin-bottom:8px">กรุณาโอนและแนบสลิปด้านล่าง</p>
+      <div class="slip-upload">
+        <label><input type="file" id="slip-file" accept="image/*" onchange="handleSlipUpload(this)"/>📎 แนบสลิป</label>
+        <div class="slip-preview" id="slip-preview"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICE CALCULATOR -->
+  <div id="price-calc-box" style="display:none;background:#fff0f6;border:1.5px solid #ffb3d1;border-radius:12px;padding:14px 16px;margin-bottom:14px">
+    <div style="font-family:'Mitr',sans-serif;font-size:.9rem;font-weight:600;color:#ff4d8d;margin-bottom:10px">💰 คำนวณราคาเบื้องต้น</div>
+    <div id="calc-inputs"></div>
+    <div id="calc-result" style="margin-top:10px;padding:10px 14px;background:#fff;border-radius:10px;border:1.5px solid #ffb3d1;font-size:.88rem;color:#555555;display:none">
+      <div style="display:flex;justify-content:space-between;margin-bottom:4px"><span>ราคาก่อนส่วนลด</span><span id="calc-before" style="font-weight:600"></span></div>
+      <div id="calc-discount-row" style="display:none;display:flex;justify-content:space-between;margin-bottom:4px;color:#e74c3c"><span id="calc-discount-label">ส่วนลด</span><span id="calc-discount-amt" style="font-weight:600"></span></div>
+      <div style="display:flex;justify-content:space-between;border-top:1px dashed #ffb3d1;padding-top:6px;margin-top:4px"><span style="font-weight:700;color:#ff4d8d">ราคารวม</span><span id="calc-total" style="font-weight:700;color:#ff4d8d;font-size:1rem"></span></div>
+      <div style="font-size:.72rem;color:#aaaaaa;margin-top:6px">* ราคาจริงอาจแตกต่างตามความยากของงาน</div>
+      <div id="calc-min-note" style="display:none;font-size:.76rem;color:#e67e22;font-weight:600;margin-top:5px;padding:5px 10px;background:#fff8ee;border-radius:7px;border:1px solid #f6d860"></div>
+    </div>
+  </div>
+
+  <!-- DISCOUNT CODE -->
+  <div class="form-group">
+    <label class="form-label">โค้ดส่วนลด <span style="font-size:.72rem;color:#aaaaaa;font-weight:400">(ถ้ามี)</span></label>
+    <div style="display:flex;gap:8px">
+      <input class="form-input" id="or-coupon" type="text" placeholder="กรอกโค้ดส่วนลด" style="flex:1;text-transform:uppercase"/>
+      <button onclick="applyCoupon()" style="padding:10px 16px;background:#ff4d8d;color:#fff;border:none;border-radius:10px;font-family:'Sarabun',sans-serif;font-size:.84rem;font-weight:600;cursor:pointer;white-space:nowrap">ใช้โค้ด</button>
+    </div>
+    <div id="coupon-result" style="margin-top:6px;font-size:.8rem;display:none"></div>
+  </div>
+
+  <button class="submit-btn" id="order-submit-btn" onclick="submitOrder()">✅ ยืนยันการจ้างงาน</button>
+</div>
+```
+
+  </div>
+</div>
+
+<!-- REVIEW MODAL -->
+
+<div id="modal-review" class="modal-overlay hidden">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('review')">✕</button>
+      <div class="modal-title">✏️ เขียนรีวิว</div>
+      <div class="modal-sub">แบ่งปันประสบการณ์ของคุณ</div>
+    </div>
+    <div class="modal-body">
+      <div class="form-group"><label class="form-label">ชื่อของคุณ</label><input class="form-input" id="rv-name" type="text" placeholder="ชื่อ (หรือนามแฝง)"/></div>
+      <div class="form-group"><label class="form-label">บริการที่ใช้</label><select class="form-select" id="rv-service" style="font-size:.86rem"></select></div>
+      <div class="form-group"><label class="form-label">ให้คะแนน</label>
+        <div class="star-rating" id="star-rating">
+          <button onclick="setStar(1)">★</button><button onclick="setStar(2)">★</button><button onclick="setStar(3)">★</button><button onclick="setStar(4)">★</button><button onclick="setStar(5)">★</button>
+        </div>
+      </div>
+      <div class="form-group"><label class="form-label">รีวิว *</label><textarea class="form-textarea" id="rv-text" placeholder="เขียนรีวิวของคุณ..."></textarea></div>
+      <button class="submit-btn" onclick="submitReview()">📨 ส่งรีวิว</button>
+    </div>
+  </div>
+</div>
+
+<!-- PROFILE MODAL -->
+
+<div id="modal-profile" class="modal-overlay hidden">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('profile')">✕</button>
+      <div class="modal-title">👤 โปรไฟล์ของฉัน</div>
+    </div>
+    <div class="modal-body">
+      <div class="profile-pic-upload">
+        <div class="profile-big-avatar" id="profile-big-av" onclick="document.getElementById('av-upload').click()">
+          <img id="profile-big-img" src="" alt="" style="display:none"/>
+          <span id="profile-big-placeholder">🌸</span>
+        </div>
+        <input type="file" id="av-upload" accept="image/*" style="display:none" onchange="handleAvatarUpload(this)"/>
+        <div class="profile-upload-hint">คลิกที่รูปเพื่อเปลี่ยนรูปโปรไฟล์</div>
+      </div>
+      <div class="form-group"><label class="form-label">ชื่อ-นามสกุล</label><input class="form-input" id="pf-name" readonly style="background:#f8f8f8;color:#666666"/></div>
+      <div class="form-group"><label class="form-label">ชื่อผู้ใช้</label><input class="form-input" id="pf-user" readonly style="background:#f8f8f8;color:#666666"/></div>
+      <button class="submit-btn" style="background:linear-gradient(135deg,#ffa0c0,#ff6699)" onclick="doLogout()">🚪 ออกจากระบบ</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══ CONFIG (แก้ที่นี่ที่เดียว) ═══
+const TG_TOKEN  = '8548512042:AAEAIIor5ofS5iw2aWv2muxChqnSAf0ji5w';
+const TG_CHATID = '7229646392';
+const ADMIN_USER = 'admin';
+const ADMIN_PASS = '300454';
+
+// ราคาขั้นต่ำ (แก้ได้ใน Admin หรือแก้ตรงนี้)
+let minOrderPrice = parseInt(localStorage.getItem('min-order-price') || '20');
+
+// ═══════════════ STATE ═══════════════
+let currentUser = null;
+let isAdmin = false;
+let selectedStar = 5;
+let selectedSvcs = [];
+let payMethod = '';
+let slipFile = null;
+let calcBasePrice = 0;
+let appliedDiscount = null;
+let qrDataUrl = localStorage.getItem('qr-dataurl') || '';
+
+// discount codes
+let discountCodes = JSON.parse(localStorage.getItem('discount-codes') || 'null') || [
+  {code:'SAVE20', type:'percent', value:20, minOrder:0,   allowInMin:true},
+  {code:'NEW50',  type:'fixed',   value:50, minOrder:100, allowInMin:false},
+];
+
+let services = JSON.parse(localStorage.getItem('services') || 'null') || [
+  {id:'งานค้าง',    icon:'📝', name:'งานค้าง',      desc:'รับทำงานที่ค้างไว้ทุกชนิด ส่งตรงเวลา',        price:'จดน้อย 7฿/หน้า | จดเยอะ 12฿/หน้า', hot:true,  calcType:'perpage', pricePerPage:7, pricePerPageHigh:12},
+  {id:'แก้ข้อสอบ',  icon:'📋', name:'แก้ไขข้อสอบ', desc:'ช่วยทำข้อสอบ แบบทดสอบ ออนไลน์ทุกรูปแบบ',   price:'เริ่มต้น ฿149', hot:false, calcType:'fixed', basePrice:149},
+  {id:'แก้0รมส',    icon:'🚨', name:'แก้ 0/ร/มส',  desc:'ช่วยทำงานส่งเพื่อแก้เกรด 0, ร, มส ครบถ้วน', price:'เริ่มต้น ฿199', hot:true,  calcType:'fixed', basePrice:199},
+  {id:'ใบงานCanva', icon:'🎨', name:'ใบงาน Canva', desc:'ออกแบบใบงานใน Canva สวยงาม ครบถ้วน',         price:'เริ่มต้น ฿129', hot:false, calcType:'fixed', basePrice:129},
+  {id:'สไลด์Canva', icon:'🖼️', name:'สไลด์ Canva', desc:'ทำสไลด์นำเสนองานใน Canva สวยมืออาชีพ',      price:'เริ่มต้น ฿159', hot:false, calcType:'fixed', basePrice:159},
+];
+
+let orders = JSON.parse(localStorage.getItem('shop-orders') || '[]');
+
+const _defaultReviews = [
+  {name:'มินท์ 🌸',  service:'📝 งานค้าง',     stars:5, text:'ส่งงานได้รวดเร็วมากค่ะ ถูกใจมากๆ เลย!',            date:'2 พ.ค. 2568', avatar:''},
+  {name:'เจมส์',    service:'🚨 แก้ 0/ร/มส',  stars:5, text:'ช่วยแก้ ร ได้ครบทุกวิชา ส่งงานละเอียด ประทับใจ!',  date:'1 พ.ค. 2568', avatar:''},
+  {name:'น้องเอิร์น',service:'🎨 ใบงาน Canva', stars:4, text:'งานสวยมากเลยค่ะ แอดมินดูแลดี ตอบไวด้วย!',          date:'30 เม.ย. 2568',avatar:''},
+  {name:'ปิ๊ง',    service:'🖼️ สไลด์ Canva',  stars:5, text:'สไลด์สวยมากกก อาจารย์ชม ขอบคุณมากๆ ครับ!',         date:'28 เม.ย. 2568',avatar:''},
+  {name:'แตงกวา',  service:'📋 แก้ไขข้อสอบ',  stars:5, text:'คะแนนดีขึ้นเยอะเลย ราคาก็ไม่แพง แนะนำ!',           date:'27 เม.ย. 2568',avatar:''},
+  {name:'เฟิร์น 🌿',service:'📝 งานค้าง',      stars:4, text:'ช่วยได้มากจริงๆ ตอนนี้งานไม่ค้างแล้ว!',             date:'25 เม.ย. 2568',avatar:''},
+];
+// โหลดจาก localStorage ถ้ามี ถ้าไม่มีใช้ default (แอดมินลบได้ตลอด)
+let reviews = JSON.parse(localStorage.getItem('shop-reviews') || 'null');
+if(reviews === null){
+  reviews = _defaultReviews;
+  localStorage.setItem('shop-reviews', JSON.stringify(reviews));
+}
+
+// ═══════════════ NOTICE ═══════════════
+(function(){
+  const m = parseInt(localStorage.getItem('notice-mute-until')||'0');
+  if(Date.now()<m) document.getElementById('notice-overlay').classList.add('hidden');
+})();
+function closeNotice(){
+  if(document.getElementById('notice-mute-chk').checked)
+    localStorage.setItem('notice-mute-until', Date.now()+86400000);
+  document.getElementById('notice-overlay').classList.add('hidden');
+}
+
+// ═══════════════ PAGE NAV ═══════════════
+function goHome(){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn:not(.nav-btn-pink)').forEach(b=>b.classList.remove('active'));
+  document.getElementById('page-home').classList.add('active');
+  document.getElementById('nav-home').classList.add('active');
+  renderReviews(); renderServices();
+}
+function showPage(name, btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  // เคลียร์ active เฉพาะปุ่ม nav ปกติ ไม่แตะ nav-btn-pink (login/profile)
+  document.querySelectorAll('.nav-btn:not(.nav-btn-pink)').forEach(b=>b.classList.remove('active'));
+  document.getElementById('page-'+name).classList.add('active');
+  if(btn) btn.classList.add('active');
+  if(name==='admin'){refreshAdmin();buildSvcSettings();loadTelegramSettings();loadSocialLinks();loadQrPreview();renderDiscountCodes();loadMinPriceAdmin();renderEventsAdmin();renderTierAdmin();}
+  if(name==='level'){renderLevelPage();}
+  if(name==='event'){renderEvents();}
+  if(name==='status'){updateStatusPageHeader();loadMyOrders();}
+}
+
+// ═══════════════ MODALS ═══════════════
+function openModal(id){document.getElementById('modal-'+id).classList.remove('hidden');}
+function closeModal(id){document.getElementById('modal-'+id).classList.add('hidden');}
+document.addEventListener('click',e=>{
+  if(e.target.classList.contains('modal-overlay')){
+    closeModal(e.target.id.replace('modal-',''));
+  }
+});
+
+// ═══════════════ AUTH ═══════════════
+function switchAuthTab(tab){
+  ['signin','signup','admin'].forEach(t=>{
+    document.getElementById('tab-'+t).classList.toggle('active',t===tab);
+    document.getElementById('auth-'+t).style.display=t===tab?'block':'none';
+  });
+}
+async function doSignin(){
+  const u=document.getElementById('li-user').value.trim();
+  const p=document.getElementById('li-pass').value.trim();
+  if(!u||!p){showAlert('⚠️ กรุณากรอกข้อมูลให้ครบ');return;}
+  // เช็ค local ก่อน (เร็วกว่า)
+  const users=JSON.parse(localStorage.getItem('users')||'[]');
+  let found=users.find(x=>x.username===u&&x.password===p);
+  if(!found){
+    // ถ้าไม่เจอใน local → เช็คจาก Google Sheet
+    try {
+      showAlert('🔄 กำลังตรวจสอบ...');
+      const res = await gsGet({action:'login',username:u,password:p});
+      if(res && res.status==='success' && res.data){
+        found = res.data;
+        // บันทึกลง local เพื่อใช้ครั้งหน้า
+        const localUsers=JSON.parse(localStorage.getItem('users')||'[]');
+        if(!localUsers.find(x=>x.username===u)){
+          localUsers.push(found);
+          localStorage.setItem('users',JSON.stringify(localUsers));
+        }
+      }
+    } catch(e){}
+  }
+  if(!found){showAlert('❌ ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');return;}
+  currentUser={fullname:found.fullname,username:found.username,avatar:found.avatar||''};
+  closeModal('login'); afterLogin();
+  showAlert('✅ ยินดีต้อนรับ '+currentUser.fullname+' 🌸');
+}
+async function doSignup(){
+  const fn=document.getElementById('su-name').value.trim();
+  const u=document.getElementById('su-user').value.trim();
+  const p=document.getElementById('su-pass').value.trim();
+  const p2=document.getElementById('su-pass2').value.trim();
+  if(!fn||!u||!p||!p2){showAlert('⚠️ กรุณากรอกข้อมูลให้ครบ');return;}
+  if(p.length<6){showAlert('⚠️ รหัสผ่านต้องมีอย่างน้อย 6 ตัว');return;}
+  if(p!==p2){showAlert('❌ รหัสผ่านไม่ตรงกัน');return;}
+  // เช็ค local ก่อน
+  const users=JSON.parse(localStorage.getItem('users')||'[]');
+  if(users.find(x=>x.username===u)){showAlert('❌ ชื่อผู้ใช้นี้ถูกใช้แล้ว');return;}
+  const newUser={fullname:fn,username:u,password:p,avatar:''};
+  // บันทึก local
+  users.push(newUser);
+  localStorage.setItem('users',JSON.stringify(users));
+  // บันทึกไป Google Sheet
+  try {
+    await gsCall({action:'register', data:{username:u,fullname:fn,password:p,avatar:''}});
+  } catch(e){}
+  currentUser={fullname:fn,username:u,avatar:''};
+  closeModal('login'); afterLogin();
+  showAlert('🎉 สมัครสมาชิกสำเร็จ! ยินดีต้อนรับ '+fn+' 🌸');
+}
+function doAdminLogin(){
+  const u=document.getElementById('ad-user').value.trim();
+  const p=document.getElementById('ad-pass').value.trim();
+  if(u===ADMIN_USER && p===ADMIN_PASS){
+    isAdmin=true;
+    currentUser={fullname:'แอดมิน',username:'admin',avatar:''};
+    closeModal('login');
+    afterLogin();
+    // show admin nav btn
+    let ab=document.getElementById('admin-nav-btn');
+    if(!ab){
+      ab=document.createElement('button');
+      ab.id='admin-nav-btn'; ab.className='nav-btn';
+      ab.textContent='🛠️ แอดมิน';
+      ab.onclick=function(){showPage('admin',this);};
+      document.querySelector('.nav-right').insertBefore(ab,document.getElementById('nav-auth-area'));
+    }
+    showPage('admin',ab);
+    showAlert('✅ เข้าสู่ระบบแอดมินสำเร็จ!');
+  } else { showAlert('❌ รหัสผ่านไม่ถูกต้อง'); }
+}
+function afterLogin(){
+  updateStatusPageHeader();
+  // show status nav
+  document.getElementById('nav-status').style.display='';
+  // replace login btn with avatar
+  const area=document.getElementById('nav-auth-area');
+  area.innerHTML=`
+    <div class="nav-avatar-wrap">
+      <div class="nav-avatar" onclick="toggleDropdown()" id="nav-av">
+        <img id="nav-av-img" src="" alt="" style="display:${currentUser.avatar?'block':'none'};width:100%;height:100%;object-fit:cover"/>
+        <span id="nav-av-placeholder" class="nav-avatar-placeholder" style="display:${currentUser.avatar?'none':'flex'};align-items:center;justify-content:center;width:100%;height:100%">🌸</span>
+      </div>
+      <div class="profile-dropdown" id="profile-dd">
+        <div class="pd-header"><div class="pd-name">${currentUser.fullname}</div><div class="pd-username">@${currentUser.username}</div></div>
+        <div class="pd-item" onclick="openProfile()">📷 แก้ไขโปรไฟล์</div>
+        <div class="pd-item" onclick="showPage('status',document.getElementById('nav-status'));closeDropdown()">📦 สถานะงาน</div>
+        <div class="pd-item danger" onclick="doLogout()">🚪 ออกจากระบบ</div>
+      </div>
+    </div>`;
+  if(currentUser.avatar) setNavAvatar(currentUser.avatar);
+}
+function toggleDropdown(){
+  document.getElementById('profile-dd').classList.toggle('open');
+}
+function closeDropdown(){
+  const d=document.getElementById('profile-dd');
+  if(d) d.classList.remove('open');
+}
+document.addEventListener('click',e=>{
+  if(!e.target.closest('.nav-avatar-wrap')) closeDropdown();
+});
+function doLogout(){
+  currentUser=null;
+  closeModal('profile');
+  // restore login btn
+  document.getElementById('nav-auth-area').innerHTML=`<button class="nav-btn nav-btn-pink" onclick="openModal('login')">เข้าสู่ระบบ</button>`;
+  document.getElementById('nav-status').style.display='none';
+  const ab=document.getElementById('admin-nav-btn');
+  if(ab) ab.remove();
+  goHome();
+  showAlert('👋 ออกจากระบบแล้ว');
+}
+function requireLoginThen(fn){
+  if(!currentUser){ openModal('login'); showAlert('⚠️ กรุณาเข้าสู่ระบบก่อนใช้บริการ'); return; }
+  fn();
+}
+
+// ═══════════════ PROFILE ═══════════════
+function openProfile(){
+  closeDropdown();
+  document.getElementById('pf-name').value=currentUser.fullname;
+  document.getElementById('pf-user').value='@'+currentUser.username;
+  // big avatar
+  if(currentUser.avatar){
+    document.getElementById('profile-big-img').src=currentUser.avatar;
+    document.getElementById('profile-big-img').style.display='block';
+    document.getElementById('profile-big-placeholder').style.display='none';
+  } else {
+    document.getElementById('profile-big-img').style.display='none';
+    document.getElementById('profile-big-placeholder').style.display='';
+  }
+  openModal('profile');
+}
+function handleAvatarUpload(input){
+  const file=input.files[0]; if(!file) return;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    const url=e.target.result;
+    currentUser.avatar=url;
+    // update in storage
+    const users=JSON.parse(localStorage.getItem('users')||'[]');
+    const idx=users.findIndex(x=>x.username===currentUser.username);
+    if(idx>=0){users[idx].avatar=url;localStorage.setItem('users',JSON.stringify(users));}
+    // update big avatar
+    document.getElementById('profile-big-img').src=url;
+    document.getElementById('profile-big-img').style.display='block';
+    document.getElementById('profile-big-placeholder').style.display='none';
+    // update nav
+    setNavAvatar(url);
+    showAlert('✅ เปลี่ยนรูปโปรไฟล์แล้ว!');
+  };
+  reader.readAsDataURL(file);
+}
+function setNavAvatar(url){
+  const img=document.getElementById('nav-av-img');
+  const ph=document.getElementById('nav-av-placeholder');
+  if(img){img.src=url;img.style.display='block';}
+  if(ph) ph.style.display='none';
+}
+
+// ═══════════════ SERVICES ═══════════════
+function renderServices(){
+  const grid=document.getElementById('services-grid');
+  if(!grid) return;
+  grid.innerHTML=services.map(s=>`
+    <div class="service-card">
+      ${s.hot?'<div class="badge-hot">ยอดนิยม</div>':''}
+      <div class="service-icon">${s.icon}</div>
+      <div class="service-title">${s.name}</div>
+      <div class="service-desc">${s.desc}</div>
+      <div class="service-price" id="price-${s.id}">${s.price}</div>
+    </div>`).join('');
+}
+
+function buildOrderCheckboxes(){
+  const wrap=document.getElementById('order-svc-checks');
+  selectedSvcs=[];
+  wrap.innerHTML=services.map(s=>`
+    <div class="svc-label" id="svcl-${s.id}" onclick="toggleSvc('${s.id}')">
+      ${s.icon} ${s.name}
+    </div>`).join('');
+}
+
+function openOrderModal(){
+  requireLoginThen(()=>{
+    buildOrderCheckboxes();
+    payMethod=''; slipFile=null;
+    document.getElementById('cash-warn').classList.remove('show');
+    document.getElementById('qr-section').classList.remove('show');
+    document.getElementById('pay-cash').classList.remove('selected');
+    document.getElementById('pay-transfer').classList.remove('selected');
+    document.getElementById('cash-ack-chk').checked=false;
+    document.getElementById('slip-preview').textContent='';
+    appliedDiscount=null; calcBasePrice=0;
+    const cr=document.getElementById('coupon-result'); if(cr) cr.style.display='none';
+    const ci=document.getElementById('or-coupon'); if(ci) ci.value='';
+    const pcb=document.getElementById('price-calc-box'); if(pcb) pcb.style.display='none';
+    openModal('order');
+  });
+}
+
+function toggleSvc(id){
+  const el=document.getElementById('svcl-'+id);
+  if(el.classList.contains('selected')){
+    el.classList.remove('selected');
+    selectedSvcs=selectedSvcs.filter(x=>x!==id);
+  } else {
+    if(selectedSvcs.length>=2){showAlert('⚠️ เลือกได้สูงสุด 2 งานเท่านั้น');return;}
+    el.classList.add('selected');
+    selectedSvcs.push(id);
+  }
+  updatePriceCalc();
+}
+
+// ═══════════════ PAYMENT ═══════════════
+function selectPay(m){
+  payMethod=m;
+  document.getElementById('pay-cash').classList.toggle('selected',m==='cash');
+  document.getElementById('pay-transfer').classList.toggle('selected',m==='transfer');
+  document.getElementById('cash-warn').classList.toggle('show',m==='cash');
+  document.getElementById('qr-section').classList.toggle('show',m==='transfer');
+  if(m==='transfer') loadQrInOrder();
+}
+function loadQrInOrder(){
+  const qrImg=document.getElementById('qr-img');
+  const qrPh=document.getElementById('qr-placeholder-text');
+  if(qrDataUrl){
+    qrImg.src=qrDataUrl; qrImg.style.display='block'; qrPh.style.display='none';
+  } else {
+    qrImg.style.display='none'; qrPh.style.display='';
+  }
+}
+function handleSlipUpload(input){
+  slipFile=input.files[0];
+  document.getElementById('slip-preview').textContent=slipFile?'✅ แนบสลิปแล้ว: '+slipFile.name:'';
+}
+
+// ═══════════════ ORDER ═══════════════
+async function submitOrder(){
+  const name=document.getElementById('or-name').value.trim();
+  const lineId=document.getElementById('or-line').value.trim();
+  const subject=document.getElementById('or-subject').value.trim();
+  const deadline=document.getElementById('or-deadline').value;
+  const detail=document.getElementById('or-detail').value.trim();
+  if(!name||!lineId){showAlert('⚠️ กรุณากรอกชื่อและไอดีไลน์');return;}
+  if(selectedSvcs.length===0){showAlert('⚠️ กรุณาเลือกประเภทงาน');return;}
+  if(!deadline||!detail){showAlert('⚠️ กรุณากรอกกำหนดส่งและรายละเอียด');return;}
+  if(!payMethod){showAlert('⚠️ กรุณาเลือกวิธีชำระเงิน');return;}
+  if(payMethod==='cash'&&!document.getElementById('cash-ack-chk').checked){showAlert('⚠️ กรุณาติ๊กรับทราบการชำระเงินก่อน');return;}
+  if(payMethod==='transfer'&&!slipFile){showAlert('⚠️ กรุณาแนบสลิปก่อนยืนยัน');return;}
+
+  const typeStr=selectedSvcs.map(id=>services.find(s=>s.id===id)?.name||id).join(' + ');
+  const newOrder={id:orders.length+1,name,lineId,type:typeStr,subject:subject||'-',deadline,pay:payMethod,status:'pending',username:currentUser?currentUser.username:''};
+  orders.push(newOrder);
+  localStorage.setItem('shop-orders', JSON.stringify(orders));
+  // บันทึกไป Google Sheet
+  try {
+    await gsCall({action:'addOrder', data:{
+      id: newOrder.id,
+      name: newOrder.name,
+      username: newOrder.username||'',
+      lineId: newOrder.lineId||'',
+      type: newOrder.type,
+      subject: newOrder.subject,
+      deadline: newOrder.deadline,
+      pay: newOrder.pay,
+      status: newOrder.status,
+    }});
+  } catch(e){}
+  // เพิ่ม XP ให้ลูกค้า
+  if(currentUser){
+    addUserXP(currentUser.username, levelConfig.xpPerOrder, 'สั่งงาน: '+typeStr).then(()=>{
+      // refresh level page ถ้ากำลังอยู่หน้า level
+      if(document.getElementById('page-level').classList.contains('active')) renderLevelPage();
+    });
+  }
+  const priceEl=document.getElementById('calc-total');
+  const priceStr=priceEl&&priceEl.textContent?priceEl.textContent:'';
+  const discStr=appliedDiscount?`${appliedDiscount.code} (${appliedDiscount.type==='percent'?appliedDiscount.value+'%':appliedDiscount.value+'฿'})`:'';
+  sendTelegram(name,lineId,typeStr,subject,deadline,detail,payMethod,priceStr,discStr);
+
+  // reset
+  ['or-name','or-line','or-subject','or-deadline','or-detail'].forEach(id=>{const e=document.getElementById(id);if(e)e.value='';});
+  selectedSvcs=[]; slipFile=null; payMethod='';
+  document.querySelectorAll('.svc-label').forEach(l=>l.classList.remove('selected'));
+  document.getElementById('cash-warn').classList.remove('show');
+  document.getElementById('qr-section').classList.remove('show');
+  document.getElementById('pay-cash').classList.remove('selected');
+  document.getElementById('pay-transfer').classList.remove('selected');
+  document.getElementById('cash-ack-chk').checked=false;
+  document.getElementById('slip-preview').textContent='';
+  closeModal('order');
+  showAlert('🎉 ยืนยันการจ้างงานสำเร็จ! เราจะติดต่อกลับโดยเร็ว 💖');
+}
+
+// ═══════════════ STATUS CHECK ═══════════════
+// ── แสดงสถานะงาน ──
+function renderStatusCards(found){
+  const res = document.getElementById('status-results');
+  const sl  = {pending:'⏳ รอดำเนินการ', doing:'🔧 กำลังทำ', done:'✅ ส่งงานแล้ว'};
+  const sc  = {pending:'status-pending',  doing:'status-doing',  done:'status-done'};
+  if(!found.length){
+    res.innerHTML='<div class="no-result" style="text-align:center;padding:32px;color:#aaa;font-size:.9rem">😢 ไม่พบรายการงาน<br/><span style="font-size:.8rem">ลองตรวจสอบชื่อให้ถูกต้อง</span></div>';
+    return;
+  }
+  res.innerHTML = found.map(o=>`
+    <div class="status-card" style="background:#fff;border-radius:14px;-webkit-border-radius:14px;padding:16px 18px;box-shadow:0 2px 8px rgba(255,100,160,.10);border:1.5px solid #ffe0ee;margin-bottom:12px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>
+        <div style="font-size:.72rem;color:#aaa;margin-bottom:2px">คำสั่งซื้อ #${o.id}</div>
+        <div style="font-weight:700;font-size:.95rem;color:#333;margin-bottom:3px">${o.name}</div>
+        <div style="font-size:.82rem;color:#ff4d8d;font-weight:600;margin-bottom:4px">${o.type}</div>
+        <div style="font-size:.78rem;color:#666">📚 ${o.subject||'-'} &nbsp;|&nbsp; 📅 กำหนดส่ง: ${o.deadline}</div>
+        <div style="font-size:.76rem;color:#aaa;margin-top:3px">💳 ชำระ: ${o.pay==='cash'?'เงินสด':'โอนจ่าย'}</div>
+      </div>
+      <span class="status-badge ${sc[o.status]||'status-pending'}" style="white-space:nowrap;flex-shrink:0">${sl[o.status]||sl.pending}</span>
+    </div>`).join('');
+}
+
+function loadMyOrders(){
+  const res = document.getElementById('status-results');
+  if(!currentUser){
+    showLoginPrompt(res);
+    return;
+  }
+  // ค้นหาด้วยชื่อ-นามสกุลของบัญชีที่ login
+  // ค้นด้วย username ก่อน (แม่นยำสุด) ถ้าไม่เจอค่อยค้นด้วยชื่อ
+  let found = orders.filter(o => o.username === currentUser.username);
+  if(!found.length){
+    const fullname = currentUser.fullname.trim().toLowerCase();
+    found = orders.filter(o => o.name.trim().toLowerCase().includes(fullname) || fullname.includes(o.name.trim().toLowerCase()));
+  }
+  renderStatusCards(found);
+}
+
+function searchStatus(){
+  const q   = document.getElementById('status-search-input').value.trim().toLowerCase();
+  if(!q){ loadMyOrders(); return; }
+  const found = orders.filter(o => o.name.toLowerCase().includes(q));
+  renderStatusCards(found);
+}
+
+function updateStatusPageHeader(){
+  const nameEl = document.getElementById('status-user-name');
+  const subEl  = document.getElementById('status-user-sub');
+  const iconEl = document.getElementById('status-user-icon');
+  if(!nameEl) return;
+  if(currentUser){
+    nameEl.textContent = currentUser.fullname;
+    subEl.textContent  = '@' + currentUser.username;
+    iconEl.textContent = currentUser.avatar ? '' : '🌸';
+    if(currentUser.avatar){
+      iconEl.innerHTML = `<img src="${currentUser.avatar}" style="width:36px;height:36px;border-radius:50%;object-fit:cover"/>`;
+    }
+  } else {
+    nameEl.textContent = 'ยังไม่ได้เข้าสู่ระบบ';
+    subEl.textContent  = 'กรุณาเข้าสู่ระบบก่อนเช็คสถานะ';
+    iconEl.textContent = '👤';
+  }
+}
+
+// ═══════════════ TELEGRAM ═══════════════
+function sendTelegram(name,lineId,type,subject,deadline,detail,pay,price,discountInfo){
+  // ใช้ hardcoded token ทุกเครื่องส่งได้เหมือนกัน
+  const token = TG_TOKEN;
+  const chatId = TG_CHATID;
+  if(!token||!chatId) return;
+  const discLine = discountInfo ? `\n🎁 ส่วนลด: ${discountInfo}` : '';
+  const priceLine = price ? `\n💰 ราคาประเมิน: ${price}` : '';
+  const msg=`🌸 *คำสั่งซื้อใหม่!*\n👤 ชื่อ: ${name}\n💬 Line: ${lineId||'-'}\n📌 งาน: ${type}\n📚 วิชา: ${subject||'-'}\n📅 กำหนดส่ง: ${deadline}\n💳 ชำระ: ${pay==='cash'?'เงินสด':'โอนจ่าย'}${priceLine}${discLine}\n📝 รายละเอียด: ${detail}`;
+  fetch(`https://api.telegram.org/bot${token}/sendMessage`,{
+    method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({chat_id:chatId,text:msg,parse_mode:'Markdown'})
+  }).catch(()=>{});
+}
+function saveTelegram(){
+  showAlert('✅ Token ถูก hardcode ในโค้ดแล้ว ทุกเครื่องส่งได้เลย!');
+}
+function loadTelegramSettings(){
+  const el1=document.getElementById('tg-token');
+  const el2=document.getElementById('tg-chatid');
+  if(el1) el1.value=TG_TOKEN;
+  if(el2) el2.value=TG_CHATID;
+}
+
+// ═══════════════ QR CODE ═══════════════
+function handleQrUpload(input){
+  const file=input.files[0]; if(!file) return;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    qrDataUrl=e.target.result;
+    localStorage.setItem('qr-dataurl',qrDataUrl);
+    loadQrPreview();
+    showAlert('✅ อัปโหลด QR Code แล้ว!');
+  };
+  reader.readAsDataURL(file);
+}
+function loadQrPreview(){
+  const img=document.getElementById('qr-admin-preview');
+  const ph=document.getElementById('qr-admin-placeholder');
+  if(qrDataUrl){img.src=qrDataUrl;img.style.display='block';ph.style.display='none';}
+  else{img.style.display='none';ph.style.display='';}
+}
+
+// ═══════════════ SERVICE SETTINGS ═══════════════
+function buildSvcSettings(){
+  const grid=document.getElementById('svc-settings-grid');
+  grid.innerHTML=services.map(s=>`
+    <div class="price-item">
+      <label>ชื่อ: ${s.icon} ${s.name}</label>
+      <input id="sn-${s.id}" placeholder="ชื่อบริการ" value="${s.name}" style="margin-bottom:4px"/>
+      <input id="sp-${s.id}" placeholder="ราคา" value="${s.price}"/>
+    </div>`).join('');
+}
+function saveSvcSettings(){
+  services.forEach(s=>{
+    const n=document.getElementById('sn-'+s.id);
+    const p=document.getElementById('sp-'+s.id);
+    if(n) s.name=n.value||s.name;
+    if(p) s.price=p.value||s.price;
+  });
+  localStorage.setItem('services',JSON.stringify(services));
+  renderServices();
+  showAlert('✅ บันทึกบริการแล้ว!');
+}
+
+// ═══════════════ SOCIAL LINKS ═══════════════
+function saveSocialLinks(){
+  localStorage.setItem('social-fb',document.getElementById('social-fb').value);
+  localStorage.setItem('social-ig',document.getElementById('social-ig').value);
+  localStorage.setItem('social-line',document.getElementById('social-line').value);
+  loadSocialLinks(); showAlert('✅ บันทึกลิงก์โซเชียลแล้ว!');
+}
+function loadSocialLinks(){
+  const fb=localStorage.getItem('social-fb')||'#';
+  const ig=localStorage.getItem('social-ig')||'#';
+  const ln=localStorage.getItem('social-line')||'#';
+  // footer
+  document.getElementById('social-link-fb').href=fb;
+  document.getElementById('social-link-ig').href=ig;
+  document.getElementById('social-link-line').href=ln;
+  // admin inputs
+  const sfb=document.getElementById('social-fb');
+  const sig=document.getElementById('social-ig');
+  const sln=document.getElementById('social-line');
+  if(sfb) sfb.value=fb==='#'?'':fb;
+  if(sig) sig.value=ig==='#'?'':ig;
+  if(sln) sln.value=ln==='#'?'':ln;
+}
+
+// ═══════════════ REVIEWS ═══════════════
+function setStar(n){
+  selectedStar=n;
+  document.querySelectorAll('.star-rating button').forEach((b,i)=>b.classList.toggle('active',i<n));
+}
+function populateReviewServiceSelect(){
+  const sel=document.getElementById('rv-service');
+  if(!sel) return;
+  sel.innerHTML=services.map(s=>`<option>${s.icon} ${s.name}</option>`).join('');
+}
+async function submitReview(){
+  const name=document.getElementById('rv-name').value.trim()||'ไม่ระบุชื่อ';
+  const service=document.getElementById('rv-service').value;
+  const text=document.getElementById('rv-text').value.trim();
+  if(!text){showAlert('⚠️ กรุณาเขียนรีวิวก่อน');return;}
+  const now=new Date();
+  const newReview={name,service,stars:selectedStar,text,avatar:currentUser?.avatar||'',
+    date:now.toLocaleDateString('th-TH',{day:'numeric',month:'short',year:'numeric'})};
+  reviews.unshift(newReview);
+  localStorage.setItem('shop-reviews', JSON.stringify(reviews));
+  // บันทึกไป Google Sheet
+  try {
+    await gsCall({action:'addReview', data:{
+      id: Date.now(),
+      name: newReview.name,
+      username: currentUser?currentUser.username:'',
+      service: newReview.service,
+      stars: newReview.stars,
+      text: newReview.text,
+      date: newReview.date,
+    }});
+  } catch(e){}
+  // เพิ่ม XP ให้ลูกค้า
+  if(currentUser){
+    addUserXP(currentUser.username, levelConfig.xpPerReview, 'เขียนรีวิว').then(()=>{
+      if(document.getElementById('page-level').classList.contains('active')) renderLevelPage();
+    });
+  }
+  closeModal('review'); renderReviews();
+  showAlert('💖 ขอบคุณสำหรับรีวิวค่ะ!');
+  document.getElementById('rv-name').value=''; document.getElementById('rv-text').value='';
+}
+async function loadReviewsFromSheet(){
+  try {
+    const res = await gsGet({action:'getReviews'});
+    if(res && res.status==='success' && Array.isArray(res.data) && res.data.length>0){
+      // รวม Sheet reviews เข้ากับ local (ไม่ซ้ำกัน)
+      res.data.forEach(r=>{
+        const exists = reviews.find(x=>
+          x.name===r.name && x.text===r.text
+        );
+        if(!exists) reviews.push(r);
+      });
+      localStorage.setItem('shop-reviews',JSON.stringify(reviews));
+      renderReviews();
+    }
+  } catch(e){}
+}
+
+function renderReviews(){
+  const makeTicker=r=>`
+    <div class="ticker-card">
+      <div class="th">
+        <div class="ta">${r.avatar?`<img src="${r.avatar}" alt=""/>`:`${r.name[0]}`}</div>
+        <div><div class="tn">${r.name}</div><div class="ts">${r.service}</div></div>
+      </div>
+      <div class="tst">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</div>
+      <div class="tt">${r.text}</div>
+    </div>`;
+  const ticker=document.getElementById('home-reviews-ticker');
+  if(ticker){const c=reviews.map(makeTicker).join(''); ticker.innerHTML=c+c;}
+}
+
+// ═══════════════ ADMIN ═══════════════
+async function refreshAdmin(){
+  // โหลด orders จาก Google Sheet
+  try {
+    const res = await gsGet({action:'getOrders'});
+    if(res && res.status==='success' && Array.isArray(res.data) && res.data.length>0){
+      // รวมกับ local (Sheet มีสิทธิ์สูงกว่า)
+      res.data.forEach(o=>{
+        if(!orders.find(x=>x.id==o.id)) orders.push(o);
+        else {
+          const local=orders.find(x=>x.id==o.id);
+          local.status=o.status||local.status;
+        }
+      });
+      localStorage.setItem('shop-orders',JSON.stringify(orders));
+    }
+  } catch(e){}
+  const pending=orders.filter(o=>o.status==='pending').length;
+  const done=orders.filter(o=>o.status==='done').length;
+  document.getElementById('stat-orders').textContent=orders.length;
+  document.getElementById('stat-pending').textContent=pending;
+  document.getElementById('stat-done').textContent=done;
+  const avg=reviews.length?(reviews.reduce((s,r)=>s+r.stars,0)/reviews.length).toFixed(1):'5.0';
+  document.getElementById('stat-rating').textContent=avg;
+  renderAdminReviews();
+  const sl={pending:'รอดำเนินการ',doing:'กำลังทำ',done:'ส่งงานแล้ว'};
+  const sc={pending:'status-pending',doing:'status-doing',done:'status-done'};
+  document.getElementById('admin-table-body').innerHTML=orders.map(o=>`
+    <tr>
+      <td>#${o.id}</td><td><b>${o.name}</b></td><td>${o.type}</td><td>${o.subject}</td>
+      <td style="font-size:.76rem">${o.lineId||'-'}</td><td>${o.deadline}</td>
+      <td style="font-size:.76rem">${o.pay==='cash'?'💵 เงินสด':'📲 โอน'}</td>
+      <td><span class="status-badge ${sc[o.status]}">${sl[o.status]}</span></td>
+      <td>
+        <div style="display:flex;gap:5px;align-items:center">
+          <select onchange="changeStatus(${o.id},this.value)" style="padding:4px 7px;border-radius:7px;-webkit-border-radius:7px;border:1.5px solid #ffb3d1;background:#fff0f6;font-size:.75rem;cursor:pointer">
+            <option value="pending" ${o.status==='pending'?'selected':''}>รอดำเนินการ</option>
+            <option value="doing" ${o.status==='doing'?'selected':''}>กำลังทำ</option>
+            <option value="done" ${o.status==='done'?'selected':''}>ส่งงานแล้ว</option>
+          </select>
+          <button onclick="deleteOrder(${o.id})" title="ลบ" style="background:#ffe0e0;border:none;color:#e74c3c;padding:4px 8px;border-radius:7px;-webkit-border-radius:7px;font-size:.78rem;cursor:pointer;flex-shrink:0">🗑️</button>
+        </div>
+      </td>
+    </tr>`).join('');
+}
+function renderAdminReviews(){
+  const tbody = document.getElementById('admin-reviews-body');
+  if(!tbody) return;
+  if(!reviews.length){
+    tbody.innerHTML='<tr><td colspan="7" style="text-align:center;color:#aaa;padding:20px">ยังไม่มีรีวิว</td></tr>';
+    return;
+  }
+  tbody.innerHTML = reviews.map((r,i)=>`
+    <tr>
+      <td>${i+1}</td>
+      <td><b>${r.name}</b></td>
+      <td style="font-size:.76rem">${r.service}</td>
+      <td style="color:#FFB84C">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</td>
+      <td style="font-size:.78rem;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${r.text}</td>
+      <td style="font-size:.74rem;color:#aaa">${r.date}</td>
+      <td><button onclick="deleteReview(${i})" style="background:#ffe0e0;border:none;color:#e74c3c;padding:4px 8px;border-radius:7px;-webkit-border-radius:7px;font-size:.78rem;cursor:pointer">🗑️</button></td>
+    </tr>`).join('');
+}
+function deleteReview(idx){
+  showConfirm('ยืนยันลบรีวิวของ "'+reviews[idx].name+'" ?', async ()=>{
+    const rid = reviews[idx].id || idx;
+    reviews.splice(idx,1);
+    localStorage.setItem('shop-reviews', JSON.stringify(reviews));
+    renderReviews();
+    renderAdminReviews();
+    showAlert('🗑️ ลบรีวิวแล้ว');
+    try { await gsCall({action:'deleteReview', id: rid}); } catch(e){}
+  });
+}
+function deleteOrder(id){
+  showConfirm('ยืนยันลบคำสั่งซื้อ #'+id+' ?', async ()=>{
+    orders=orders.filter(o=>o.id!==id);
+    localStorage.setItem('shop-orders', JSON.stringify(orders));
+    refreshAdmin();
+    showAlert('🗑️ ลบคำสั่งซื้อแล้ว');
+    try { await gsCall({action:'deleteOrder', id}); } catch(e){}
+  });
+}
+async function changeStatus(id,status){
+  const o=orders.find(x=>x.id===id);
+  if(o){
+    o.status=status;
+    localStorage.setItem('shop-orders', JSON.stringify(orders));
+    refreshAdmin();
+    showAlert('✅ อัปเดตสถานะแล้ว');
+    try { await gsCall({action:'updateOrderStatus', id, status}); } catch(e){}
+  }
+}
+function deleteOrder(id){
+  showConfirm('ยืนยันลบคำสั่งซื้อ #'+id+' ?', async ()=>{
+    orders=orders.filter(o=>o.id!==id);
+    localStorage.setItem('shop-orders', JSON.stringify(orders));
+    refreshAdmin();
+    showAlert('🗑️ ลบคำสั่งซื้อแล้ว');
+    try { await gsCall({action:'deleteOrder', id}); } catch(e){}
+  });
+}
+
+// ═══════════════ ALERT ═══════════════
+let alertTimer;
+function showAlert(msg){
+  const ex=document.querySelector('.alert'); if(ex) ex.remove();
+  clearTimeout(alertTimer);
+  const el=document.createElement('div'); el.className='alert'; el.textContent=msg;
+  document.body.appendChild(el);
+  alertTimer=setTimeout(()=>el.remove(),3400);
+}
+
+// ═══════════════ PRICE CALCULATOR ═══════════════
+function updatePriceCalc(){
+  const box = document.getElementById('price-calc-box');
+  const inputsDiv = document.getElementById('calc-inputs');
+  if(!box || !inputsDiv) return;
+  if(selectedSvcs.length === 0){ box.style.display='none'; return; }
+  box.style.display='block';
+
+  // Build calc inputs for selected services
+  let html = '';
+  selectedSvcs.forEach(id=>{
+    const svc = services.find(s=>s.id===id);
+    if(!svc) return;
+    if(svc.calcType === 'perpage'){
+      html += `<div style="margin-bottom:10px">
+        <div style="font-size:.8rem;font-weight:600;color:#555555;margin-bottom:5px">${svc.icon} ${svc.name}</div>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <input id="pages-${id}" type="number" min="1" placeholder="จำนวนหน้า" 
+            oninput="calcTotal()"
+            style="width:110px;padding:8px 10px;border:1.5px solid #ffb3d1;border-radius:8px;font-size:.84rem;background:#fff0f6;outline:none"/>
+          <select id="density-${id}" onchange="calcTotal()" style="padding:8px 10px;border:1.5px solid #ffb3d1;border-radius:8px;font-size:.82rem;background:#fff0f6">
+            <option value="${svc.pricePerPage}">จดน้อย (${svc.pricePerPage}฿/หน้า)</option>
+            <option value="${svc.pricePerPageHigh}">จดเยอะ (${svc.pricePerPageHigh}฿/หน้า)</option>
+          </select>
+        </div>
+      </div>`;
+    } else {
+      html += `<div style="margin-bottom:6px;font-size:.82rem;color:#555555">${svc.icon} ${svc.name}: <strong style="color:#ff4d8d">${svc.basePrice} ฿</strong></div>`;
+    }
+  });
+  inputsDiv.innerHTML = html;
+  calcTotal();
+}
+
+function calcTotal(){
+  let base = 0;
+  let hasPerpage = false;
+  let perpageTotal = 0;
+  let perpagePages = 0;
+  let perpageRate = 0;
+
+  selectedSvcs.forEach(id=>{
+    const svc = services.find(s=>s.id===id);
+    if(!svc) return;
+    if(svc.calcType==='perpage'){
+      const pages = parseInt(document.getElementById('pages-'+id)?.value||0);
+      const rate  = parseInt(document.getElementById('density-'+id)?.value||svc.pricePerPage);
+      perpageTotal += pages * rate;
+      perpagePages += pages;
+      perpageRate = rate;
+      hasPerpage = true;
+    } else {
+      base += svc.basePrice||0;
+    }
+  });
+
+  // คำนวณ threshold: จำนวนหน้าที่ยังติดราคาขั้นต่ำ
+  // เช่น min=20, rate=7 → ceil(20/7)=3 → 1-3 หน้าติดขั้นต่ำ, 4+ไม่ติด
+  let minApplied = false;
+  let minNote = '';
+  if(hasPerpage && perpagePages > 0){
+    const threshold = perpageRate > 0 ? Math.ceil(minOrderPrice / perpageRate) : 0;
+    if(perpagePages <= threshold && perpageTotal < minOrderPrice){
+      // ติดราคาขั้นต่ำ
+      base += minOrderPrice;
+      minApplied = true;
+      minNote = 'ราคาขั้นต่ำ ' + minOrderPrice + ' ฿ (สำหรับ ' + threshold + ' หน้าแรก)';
+    } else {
+      // 4 หน้าขึ้นไป คิดราคาปกติ
+      base += perpageTotal;
+    }
+  }
+
+  calcBasePrice = base;
+  if(base === 0){ document.getElementById('calc-result').style.display='none'; return; }
+  document.getElementById('calc-result').style.display='block';
+  document.getElementById('calc-before').textContent = base + ' ฿';
+
+  // แสดง/ซ่อน note ขั้นต่ำ
+  const minNoteEl = document.getElementById('calc-min-note');
+  if(minNoteEl){
+    if(minApplied){
+      minNoteEl.style.display='block';
+      minNoteEl.textContent = '⚠️ ' + minNote;
+    } else {
+      minNoteEl.style.display='none';
+    }
+  }
+
+  // apply discount if any
+  let total = base;
+  const discRow = document.getElementById('calc-discount-row');
+  if(appliedDiscount && base >= (appliedDiscount.minOrder||0)){
+    let discAmt = appliedDiscount.type==='percent' ? Math.round(base*appliedDiscount.value/100) : appliedDiscount.value;
+    total = Math.max(0, base - discAmt);
+    document.getElementById('calc-discount-label').textContent = `ส่วนลด (${appliedDiscount.code})`;
+    document.getElementById('calc-discount-amt').textContent = '-' + discAmt + ' ฿';
+    discRow.style.display = 'flex';
+  } else {
+    discRow.style.display = 'none';
+  }
+  // enforce minimum order price
+  // แสดงราคาสุดท้าย (หลังส่วนลด)
+  document.getElementById('calc-total').textContent = total + ' ฿';
+}
+
+// ═══════════════ DISCOUNT CODE ═══════════════
+function applyCoupon(){
+  const code = (document.getElementById('or-coupon').value||'').trim().toUpperCase();
+  const res = document.getElementById('coupon-result');
+  if(!code){ res.style.display='none'; return; }
+  const found = discountCodes.find(d=>d.code===code);
+  if(!found){
+    appliedDiscount=null;
+    res.style.display='block';
+    res.innerHTML='<span style="color:#e74c3c">❌ โค้ดไม่ถูกต้องหรือหมดอายุแล้ว</span>';
+    calcTotal(); return;
+  }
+  // เช็ค allowInMin - โค้ดนี้ใช้ในราคาขั้นต่ำได้ไหม
+  const minNoteEl = document.getElementById('calc-min-note');
+  const isMinApplied = minNoteEl && minNoteEl.style.display !== 'none' && minNoteEl.textContent.includes('ขั้นต่ำ');
+  if(isMinApplied && found.allowInMin === false){
+    res.style.display='block';
+    res.innerHTML='<span style="color:#e67e22">⚠️ โค้ดนี้ไม่สามารถใช้กับราคาขั้นต่ำได้</span>';
+    appliedDiscount=null; calcTotal(); return;
+  }
+  if(calcBasePrice>0 && calcBasePrice < (found.minOrder||0)){
+    res.style.display='block';
+    res.innerHTML='<span style="color:#e74c3c">❌ ต้องสั่งงานขั้นต่ำ '+found.minOrder+' ฿ จึงจะใช้โค้ดนี้ได้</span>';
+    appliedDiscount=null; calcTotal(); return;
+  }
+  appliedDiscount = found;
+  res.style.display='block';
+  const desc = found.type==='percent' ? 'ลด '+found.value+'%' : 'ลด '+found.value+' ฿';
+  const minTag = found.allowInMin===false ? ' <span style="color:#e67e22;font-size:.72rem">(ไม่ใช้ได้กับราคาขั้นต่ำ)</span>' : '';
+  res.innerHTML='<span style="color:green">✅ ใช้โค้ด '+found.code+' ได้ ('+desc+')</span>'+minTag;
+  calcTotal();
+}
+
+function addDiscountCode(){
+  const code = (document.getElementById('new-code').value||'').trim().toUpperCase();
+  const type = document.getElementById('new-code-type').value;
+  const val  = parseFloat(document.getElementById('new-code-val').value||0);
+  const min  = parseFloat(document.getElementById('new-code-min').value||0);
+  const allowInMin = document.getElementById('new-code-allow-min')?.checked || false;
+  if(!code||!val){ showAlert('⚠️ กรุณากรอกโค้ดและค่าส่วนลด'); return; }
+  if(discountCodes.find(d=>d.code===code)){ showAlert('❌ โค้ดนี้มีอยู่แล้ว'); return; }
+  const newCodeObj = {code,type,value:val,minOrder:min,allowInMin};
+  discountCodes.push(newCodeObj);
+  localStorage.setItem('discount-codes',JSON.stringify(discountCodes));
+  syncAddCodeToSheet(newCodeObj); // sync ไป Google Sheet
+  document.getElementById('new-code').value='';
+  document.getElementById('new-code-val').value='';
+  document.getElementById('new-code-min').value='';
+  document.getElementById('new-code-allow-min').checked=false;
+  renderDiscountCodes(); showAlert('✅ เพิ่มโค้ดแล้ว! (บันทึกไป Sheet ด้วย)');
+}
+
+function deleteDiscountCode(code){
+  discountCodes = discountCodes.filter(d=>d.code!==code);
+  localStorage.setItem('discount-codes',JSON.stringify(discountCodes));
+  syncDeleteCodeFromSheet(code); // sync ลบจาก Google Sheet
+  renderDiscountCodes(); showAlert('🗑️ ลบโค้ดแล้ว (ลบจาก Sheet ด้วย)');
+}
+
+function renderDiscountCodes(){
+  const el=document.getElementById('discount-codes-list');
+  if(!el) return;
+  el.innerHTML='';
+  if(!discountCodes.length){
+    el.innerHTML='<div style="font-size:.8rem;color:#aaaaaa">ยังไม่มีโค้ดส่วนลด</div>';
+    return;
+  }
+  discountCodes.forEach(function(d){
+    var row = document.createElement('div');
+    row.style.cssText='display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:#fff0f6;border-radius:8px;margin-bottom:7px;border:1px solid #ffe0ee;flex-wrap:wrap;gap:6px';
+    var info = document.createElement('div');
+    var codeSpan = document.createElement('span');
+    codeSpan.style.cssText='font-weight:700;font-size:.88rem;color:#ff4d8d';
+    codeSpan.textContent=d.code;
+    var descSpan = document.createElement('span');
+    descSpan.style.cssText='font-size:.76rem;color:#666;margin-left:6px';
+    descSpan.textContent=(d.type==='percent'?'ลด '+d.value+'%':'ลด '+d.value+' ฿')+(d.minOrder?' (ขั้นต่ำ '+d.minOrder+'฿)':'');
+    var minTag = document.createElement('span');
+    minTag.style.cssText='font-size:.7rem;margin-left:6px;padding:2px 7px;border-radius:10px;'+(d.allowInMin?'background:#d4edda;color:#155724':'background:#fff3cd;color:#856404');
+    minTag.textContent=d.allowInMin?'✅ ใช้กับขั้นต่ำได้':'⚠️ ไม่ใช้กับขั้นต่ำ';
+    info.appendChild(codeSpan);
+    info.appendChild(descSpan);
+    info.appendChild(minTag);
+    var delBtn = document.createElement('button');
+    delBtn.style.cssText='background:#ffe0e0;border:none;color:#e74c3c;padding:4px 10px;border-radius:8px;font-size:.76rem;cursor:pointer';
+    delBtn.textContent='🗑️ ลบ';
+    delBtn.onclick=(function(code){ return function(){ deleteDiscountCode(code); }; })(d.code);
+    row.appendChild(info);
+    row.appendChild(delBtn);
+    el.appendChild(row);
+  });
+}
+
+
+// ═══════════════ CONFIG ═══════════════
+const GS_URL = 'https://script.google.com/macros/s/AKfycbymTxVFLKrqlEDoDJpE0nrB_BnoRd5QZ9jWkSMqdriVt_RB3wDgxvU2FvIkQx5-Je4f/exec';
+
+// ─── XP / LEVEL settings (admin-configurable) ───
+let levelConfig = JSON.parse(localStorage.getItem('level-config') || 'null') || {
+  xpPerOrder: 10,
+  xpPerReview: 5,
+  tiers: [
+    {level:1, name:'Newbie',     icon:'🌱', minXP:0,   color:'#aaa',     reward:''},
+    {level:2, name:'Bronze',     icon:'🥉', minXP:50,  color:'#cd7f32',  reward:'โค้ด BRONZE10 (ลด 10%)'},
+    {level:3, name:'Silver',     icon:'🥈', minXP:150, color:'#999',     reward:'โค้ด SILVER15 (ลด 15%)'},
+    {level:4, name:'Gold',       icon:'🥇', minXP:350, color:'#f5c518',  reward:'โค้ด GOLD20 (ลด 20%)'},
+    {level:5, name:'Diamond',    icon:'💎', minXP:700, color:'#6dd5ed',  reward:'โค้ด DIAMOND30 (ลด 30%)'},
+    {level:6, name:'Legend',     icon:'👑', minXP:1200,color:'#ff4d8d',  reward:'โค้ด LEGEND50 (ลด 50%)'},
+  ]
+};
+
+// ─── Events (admin-configurable) ───
+let events = JSON.parse(localStorage.getItem('shop-events') || 'null') || [
+  {id:'ev1', title:'แชร์โพสต์รับโค้ด', icon:'📢', desc:'แชร์โพสต์ร้านกู้ชีพงานค้างลงในสตอรี่ IG หรือ Facebook แล้วส่งภาพมาทาง Line เพื่อรับโค้ดส่วนลด', reward:'SHARE15', status:'active', endDate:'2025-06-30'},
+  {id:'ev2', title:'รีวิวรับส่วนลด',     icon:'⭐', desc:'รีวิวงานที่สั่งผ่านเว็บและรับโค้ดส่วนลดทันที ไม่จำกัดจำนวนครั้ง',                            reward:'REVIEW10', status:'active', endDate:'2025-12-31'},
+];
+
+// ─── Google Sheet API ───
+async function gsCall(payload) {
+  try {
+    await fetch(GS_URL, {
+      method: 'POST',
+      headers: {'Content-Type':'text/plain'},
+      body: JSON.stringify(payload),
+      mode: 'no-cors'
+    });
+    return {ok: true};
+  } catch(e) { return {ok: false}; }
+}
+
+async function gsGet(params) {
+  try {
+    const url = GS_URL + '?' + new URLSearchParams(params);
+    const res = await fetch(url);
+    if(!res.ok) return null;
+    return await res.json();
+  } catch(e) { return null; }
+}
+
+// ─── XP functions ───
+async function getUserXP(username) {
+  // ดึงจาก localStorage ก่อน (เร็วกว่า + ไม่ขึ้น network)
+  const local = JSON.parse(localStorage.getItem('xp-' + username) || 'null');
+  if (local) return local;
+  // ถ้าไม่มีใน local ลอง Google Sheet
+  try {
+    const data = await gsGet({action:'getXP', username});
+    if (data && typeof data.xp !== 'undefined') {
+      localStorage.setItem('xp-' + username, JSON.stringify(data));
+      return data;
+    }
+  } catch(e) {}
+  return {xp:0, level:1, history:[]};
+}
+
+async function addUserXP(username, amount, reason) {
+  try {
+    const data = await getUserXP(username);
+    const newXP = (data.xp || 0) + amount;
+    const newLevel = calcLevelFromXP(newXP);
+    const history = data.history || [];
+    history.unshift({xp: amount, reason, date: new Date().toLocaleDateString('th-TH'), total: newXP});
+    if(history.length > 20) history.pop();
+
+    // บันทึก localStorage ก่อน (ทำงานทันที)
+    const updated = {xp: newXP, level: newLevel, history};
+    localStorage.setItem('xp-' + username, JSON.stringify(updated));
+
+    // ส่งไป Google Sheet แบบ background (ไม่ blocking)
+    gsCall({action:'addXP', username, xp: amount, reason}).catch(()=>{});
+
+    // เช็ค level up
+    const oldLevel = data.level || 1;
+    if (newLevel > oldLevel) {
+      const tier = levelConfig.tiers.find(t=>t.level===newLevel);
+      if(tier) {
+        showAlert('🎉 ยินดีด้วย! ขึ้นเป็น ' + tier.icon + ' ' + tier.name + ' แล้ว!');
+        if (tier.reward) setTimeout(()=>showAlert('🎁 รางวัล: ' + tier.reward), 2000);
+      }
+    }
+    return updated;
+  } catch(e) {
+    console.error('addUserXP error:', e);
+    return {xp:0, level:1, history:[]};
+  }
+}
+
+function calcLevelFromXP(xp) {
+  let lv = 1;
+  for (const t of levelConfig.tiers) {
+    if (xp >= t.minXP) lv = t.level;
+  }
+  return lv;
+}
+
+function getTierByLevel(lv) {
+  return levelConfig.tiers.find(t=>t.level===lv) || levelConfig.tiers[0];
+}
+
+// ─── Render Level Page ───
+async function renderLevelPage() {
+  if (!currentUser) return;
+  const data = await getUserXP(currentUser.username);
+  const xp = data.xp || 0;
+  const lv = calcLevelFromXP(xp);
+  const tier = getTierByLevel(lv);
+  const nextTier = levelConfig.tiers.find(t=>t.level===lv+1);
+
+  // avatar
+  const avEl = document.getElementById('lv-av');
+  if (avEl) {
+    if (currentUser.avatar) avEl.innerHTML = `<img src="${currentUser.avatar}"/>`;
+    else avEl.textContent = tier.icon;
+  }
+  const nm = document.getElementById('lv-name'); if(nm) nm.textContent = currentUser.fullname;
+  const bd = document.getElementById('lv-badge'); if(bd){ bd.textContent = tier.icon+' '+tier.name; bd.style.background=tier.color; }
+  const lvn = document.getElementById('lv-num'); if(lvn) lvn.textContent = lv;
+
+  // XP bar
+  const barXP  = xp - tier.minXP;
+  const nextXP = nextTier ? nextTier.minXP - tier.minXP : 1;
+  const pct    = nextTier ? Math.min(100, Math.round(barXP/nextXP*100)) : 100;
+  const xt = document.getElementById('lv-xp-text'); if(xt) xt.textContent = xp + (nextTier ? ` / ${nextTier.minXP} XP` : ' XP (MAX)');
+  const bar = document.getElementById('lv-bar'); if(bar) bar.style.width = pct+'%';
+  const nx = document.getElementById('lv-next-text');
+  if(nx) nx.textContent = nextTier ? `อีก ${nextTier.minXP - xp} XP จะขึ้นเป็น ${nextTier.icon} ${nextTier.name}` : '🏆 ถึงระดับสูงสุดแล้ว!';
+
+  // reward box
+  const rb = document.getElementById('lv-reward-box');
+  const rt = document.getElementById('lv-reward-text');
+  if(tier.reward && rb && rt){ rb.style.display='block'; rt.textContent=tier.reward; }
+  else if(rb) rb.style.display='none';
+
+  // tier cards
+  const tiersEl = document.getElementById('level-tiers');
+  if(tiersEl) tiersEl.innerHTML = levelConfig.tiers.map(t=>`
+    <div class="tier-card ${t.level===lv?'current':xp>=t.minXP?'unlocked':''}">
+      <div class="tier-icon">${t.icon}</div>
+      <div class="tier-name">${t.name}</div>
+      <div class="tier-req">${t.minXP} XP</div>
+      ${t.reward?`<div class="tier-reward">🎁 ${t.reward}</div>`:''}
+      ${t.level===lv?'<div style="font-size:.65rem;color:#ff4d8d;font-weight:700;margin-top:4px">◀ คุณอยู่ที่นี่</div>':''}
+    </div>`).join('');
+
+  // history
+  const hist = document.getElementById('lv-history-list');
+  if(hist){
+    const h = data.history || [];
+    hist.innerHTML = h.length ? h.map(item=>`
+      <div class="lv-history-item">
+        <span>${item.reason}</span>
+        <div style="text-align:right">
+          <div class="lv-xp-gain">+${item.xp} XP</div>
+          <div style="font-size:.7rem;color:#aaaaaa">${item.date}</div>
+        </div>
+      </div>`).join('') : '<div style="text-align:center;color:#aaaaaa;padding:20px;font-size:.82rem">ยังไม่มีประวัติ XP</div>';
+  }
+}
+
+// ─── EVENTS ───
+function renderEvents() {
+  const grid = document.getElementById('event-grid');
+  const empty = document.getElementById('event-empty');
+  if(!grid) return;
+  if(!events.length){ grid.innerHTML=''; if(empty) empty.style.display='block'; return; }
+  if(empty) empty.style.display='none';
+  const statusLabel = {active:'กำลังดำเนินการ', soon:'เร็วๆ นี้', ended:'สิ้นสุดแล้ว'};
+  const statusClass = {active:'ev-active', soon:'ev-soon', ended:'ev-ended'};
+  grid.innerHTML = events.map(ev=>`
+    <div class="event-card">
+      <div class="event-banner">
+        ${ev.icon||'🎉'}
+        <span class="event-status-badge ${statusClass[ev.status]||'ev-active'}">${statusLabel[ev.status]||'กำลังดำเนินการ'}</span>
+      </div>
+      <div class="event-body">
+        <div class="event-title">${ev.title}</div>
+        <div class="event-desc">${ev.desc}</div>
+        ${ev.endDate?`<div class="event-meta">📅 สิ้นสุด: ${ev.endDate}</div>`:''}
+        <div class="event-reward">🎁 รางวัล: โค้ด <strong>${ev.reward}</strong></div>
+        ${ev.status==='active'
+          ? `<button class="event-join-btn" onclick="joinEvent('${ev.id}','${ev.reward}')">✅ เข้าร่วมกิจกรรม</button>`
+          : `<button class="event-join-btn" disabled>${ev.status==='soon'?'⏳ เร็วๆ นี้':'สิ้นสุดแล้ว'}</button>`}
+      </div>
+    </div>`).join('');
+}
+
+function joinEvent(evId, rewardCode) {
+  if(!currentUser){ openModal('login'); showAlert('⚠️ กรุณาเข้าสู่ระบบก่อน'); return; }
+  const joined = JSON.parse(localStorage.getItem('joined-events-'+currentUser.username)||'[]');
+  if(joined.includes(evId)){ showAlert('✅ คุณเข้าร่วมกิจกรรมนี้แล้ว'); return; }
+  // find discount code
+  const found = discountCodes.find(d=>d.code===rewardCode);
+  if(!found){ showAlert('⚠️ ยังไม่ได้ตั้งค่าโค้ดรางวัลนี้ใน Admin'); return; }
+  joined.push(evId);
+  localStorage.setItem('joined-events-'+currentUser.username, JSON.stringify(joined));
+  showAlert(`🎉 เข้าร่วมสำเร็จ! โค้ดส่วนลดของคุณคือ "${rewardCode}" (คัดลอกแล้วนำไปใช้ตอนสั่งงาน)`);
+}
+
+function addEvent(){
+  const title  = document.getElementById('ev-title').value.trim();
+  const icon   = document.getElementById('ev-icon').value.trim() || '🎉';
+  const desc   = document.getElementById('ev-desc').value.trim();
+  const reward = document.getElementById('ev-reward').value.trim().toUpperCase();
+  const status = document.getElementById('ev-status').value;
+  const endDate= document.getElementById('ev-end').value;
+  if(!title||!desc||!reward){ showAlert('⚠️ กรุณากรอกข้อมูลให้ครบ'); return; }
+  events.push({id:'ev'+Date.now(), title, icon, desc, reward, status, endDate});
+  localStorage.setItem('shop-events', JSON.stringify(events));
+  renderEventsAdmin();
+  ['ev-title','ev-icon','ev-desc','ev-reward','ev-end'].forEach(id=>{ const e=document.getElementById(id); if(e) e.value=''; });
+  document.getElementById('ev-status').value='active';
+  showAlert('✅ เพิ่มกิจกรรมแล้ว!');
+}
+
+function deleteEvent(id){
+  events = events.filter(e=>e.id!==id);
+  localStorage.setItem('shop-events', JSON.stringify(events));
+  renderEventsAdmin(); showAlert('🗑️ ลบกิจกรรมแล้ว');
+}
+
+function renderEventsAdmin(){
+  const el = document.getElementById('events-admin-list');
+  if(!el) return;
+  if(!events.length){ el.innerHTML='<div style="font-size:.8rem;color:#aaaaaa">ยังไม่มีกิจกรรม</div>'; return; }
+  const sl={active:'🟢',soon:'🟡',ended:'⚫'};
+  el.innerHTML = events.map(ev=>`
+    <div class="event-admin-item">
+      <div class="event-admin-info">
+        <div class="event-admin-title">${ev.icon} ${ev.title} ${sl[ev.status]||''}</div>
+        <div class="event-admin-meta">รางวัล: ${ev.reward} ${ev.endDate?'| สิ้นสุด: '+ev.endDate:''}</div>
+      </div>
+      <button onclick="deleteEvent('${ev.id}')" style="background:#ffe0e0;border:none;color:#e74c3c;padding:4px 10px;border-radius:8px;font-size:.76rem;cursor:pointer;flex-shrink:0">🗑️ ลบ</button>
+    </div>`).join('');
+}
+
+// ─── Admin Level Settings ───
+function renderTierAdmin(){
+  const el = document.getElementById('tier-admin-list');
+  if(!el) return;
+  document.getElementById('admin-xp-per-order').value = levelConfig.xpPerOrder;
+  document.getElementById('admin-xp-per-review').value = levelConfig.xpPerReview;
+  el.innerHTML = levelConfig.tiers.map((t,i)=>`
+    <div style="display:grid;grid-template-columns:40px 1fr 1fr 2fr;gap:8px;align-items:center;margin-bottom:8px">
+      <span style="font-size:1.2rem;text-align:center">${t.icon}</span>
+      <div><div style="font-size:.7rem;color:#aaaaaa">ชื่อ</div><input id="ti-name-${i}" class="form-input" value="${t.name}" style="font-size:.78rem;padding:6px 8px"/></div>
+      <div><div style="font-size:.7rem;color:#aaaaaa">XP ขั้นต่ำ</div><input id="ti-xp-${i}" class="form-input" type="number" value="${t.minXP}" style="font-size:.78rem;padding:6px 8px"/></div>
+      <div><div style="font-size:.7rem;color:#aaaaaa">รางวัล (โค้ด)</div><input id="ti-rew-${i}" class="form-input" value="${t.reward}" style="font-size:.78rem;padding:6px 8px"/></div>
+    </div>`).join('');
+}
+
+function saveLevelSettings(){
+  levelConfig.xpPerOrder  = parseInt(document.getElementById('admin-xp-per-order').value)||10;
+  levelConfig.xpPerReview = parseInt(document.getElementById('admin-xp-per-review').value)||5;
+  levelConfig.tiers.forEach((t,i)=>{
+    const n=document.getElementById('ti-name-'+i);
+    const x=document.getElementById('ti-xp-'+i);
+    const r=document.getElementById('ti-rew-'+i);
+    if(n) t.name=n.value||t.name;
+    if(x) t.minXP=parseInt(x.value)||t.minXP;
+    if(r) t.reward=r.value;
+  });
+  localStorage.setItem('level-config', JSON.stringify(levelConfig));
+  showAlert('✅ บันทึกตั้งค่าเลเวลแล้ว!');
+}
+
+// ═══════════════ MIN ORDER PRICE ═══════════════
+function saveMinPrice(){
+  const val = parseInt(document.getElementById('admin-min-price').value || '0');
+  if(isNaN(val)||val<0){ showAlert('⚠️ กรุณากรอกราคาขั้นต่ำให้ถูกต้อง'); return; }
+  minOrderPrice = val;
+  localStorage.setItem('min-order-price', val);
+  showAlert('✅ ตั้งราคาขั้นต่ำ ' + val + ' ฿ แล้ว!');
+  calcTotal();
+}
+function previewMinPrice(val){
+  const el = document.getElementById('min-price-preview');
+  if(el) el.textContent = val > 0 ? '→ ลูกค้าจะถูกเก็บขั้นต่ำ ' + val + ' ฿ ต่อออเดอร์' : '→ ไม่มีขั้นต่ำ';
+}
+function loadMinPriceAdmin(){
+  const el = document.getElementById('admin-min-price');
+  if(el){ el.value = minOrderPrice; previewMinPrice(minOrderPrice); }
+}
+
+
+// ═══════════════ SYNC DISCOUNT CODES FROM GOOGLE SHEET ═══════════════
+async function syncDiscountCodesFromSheet(){
+  try {
+    const data = await gsGet({action:'getCodes'});
+    if(!data || !data.data || !Array.isArray(data.data)) return;
+    if(data.data.length === 0) return;
+    // แปลงข้อมูลจาก Sheet เป็น format ที่ใช้
+    const sheetCodes = data.data.map(row => ({
+      code:       (row.code||'').toString().toUpperCase(),
+      type:       row.type||'fixed',
+      value:      parseFloat(row.value)||0,
+      minOrder:   parseFloat(row.minOrder)||0,
+      allowInMin: row.allowInMin === true || row.allowInMin === 'true' || row.allowInMin === 'TRUE',
+    })).filter(d => d.code);
+    // รวมกับ local - Sheet มีสิทธิ์สูงกว่า
+    sheetCodes.forEach(sc => {
+      if(!discountCodes.find(d=>d.code===sc.code)){
+        discountCodes.push(sc);
+      }
+    });
+    localStorage.setItem('discount-codes', JSON.stringify(discountCodes));
+    renderDiscountCodes();
+    console.log('✅ โหลดโค้ดส่วนลดจาก Sheet แล้ว:', sheetCodes.length, 'โค้ด');
+  } catch(e) {
+    console.log('Sheet sync failed (ใช้ local แทน):', e.message);
+  }
+}
+
+// ── บันทึกโค้ดไปยัง Google Sheet ด้วยเมื่อ addDiscountCode ──
+async function syncAddCodeToSheet(codeObj){
+  try {
+    await gsCall({
+      action: 'addCode',
+      code:       codeObj.code,
+      type:       codeObj.type,
+      value:      codeObj.value,
+      minOrder:   codeObj.minOrder,
+      allowInMin: codeObj.allowInMin,
+    });
+    console.log('✅ บันทึกโค้ด', codeObj.code, 'ไป Sheet แล้ว');
+  } catch(e) {
+    console.log('Sheet addCode failed:', e.message);
+  }
+}
+
+async function syncDeleteCodeFromSheet(code){
+  try {
+    await gsCall({action:'deleteCode', code});
+    console.log('✅ ลบโค้ด', code, 'จาก Sheet แล้ว');
+  } catch(e) {
+    console.log('Sheet deleteCode failed:', e.message);
+  }
+}
+
+// ═══════════════ CUSTOM CONFIRM ═══════════════
+let _confirmCallback = null;
+function showConfirm(msg, callback){
+  document.getElementById('confirm-msg').textContent = msg;
+  _confirmCallback = callback;
+  openModal('confirm');
+}
+function confirmOk(){
+  closeModal('confirm');
+  if(_confirmCallback){ _confirmCallback(); _confirmCallback=null; }
+}
+function confirmCancel(){
+  closeModal('confirm');
+  _confirmCallback = null;
+}
+function showLoginPrompt(el){
+  const d = document.createElement('div');
+  d.style.cssText = 'text-align:center;padding:24px;background:#fff0f6;border-radius:12px;border:1.5px dashed #ffb3d1';
+  const icon = document.createElement('div');
+  icon.style.cssText = 'font-size:1.4rem;margin-bottom:8px';
+  icon.textContent = '🔒';
+  const msg = document.createElement('div');
+  msg.style.cssText = 'font-size:.88rem;color:#ff4d8d;font-weight:600;margin-bottom:12px';
+  msg.textContent = 'กรุณาเข้าสู่ระบบก่อน';
+  const btn = document.createElement('button');
+  btn.style.cssText = 'padding:8px 20px;background:#ff4d8d;color:#fff;border:none;border-radius:20px;font-size:.84rem;cursor:pointer';
+  btn.textContent = 'เข้าสู่ระบบ';
+  btn.onclick = function(){ openModal('login'); };
+  d.appendChild(icon); d.appendChild(msg); d.appendChild(btn);
+  el.innerHTML = '';
+  el.appendChild(d);
+}
+
+// ═══════════════ INIT ═══════════════
+renderServices();
+renderReviews();
+loadReviewsFromSheet();
+loadSocialLinks();
+setStar(5);
+populateReviewServiceSelect();
+renderDiscountCodes();
+syncDiscountCodesFromSheet();
+</script>
+
+<!-- CUSTOM CONFIRM MODAL -->
+
+<div id="modal-confirm" class="modal-overlay hidden">
+  <div class="modal" style="max-width:340px">
+    <div class="modal-header" style="padding:24px 24px 0">
+      <div style="font-size:1.5rem;text-align:center;margin-bottom:8px">⚠️</div>
+      <div class="modal-title" style="text-align:center;font-size:1rem" id="confirm-msg">ยืนยัน?</div>
+    </div>
+    <div class="modal-body" style="padding:16px 20px 20px">
+      <div style="display:flex;gap:10px">
+        <button onclick="confirmCancel()" style="flex:1;padding:11px;background:#f0f0f0;border:none;border-radius:10px;-webkit-border-radius:10px;font-family:'Sarabun',sans-serif;font-size:.9rem;cursor:pointer;color:#555">ยกเลิก</button>
+        <button onclick="confirmOk()" style="flex:1;padding:11px;background:#e74c3c;border:none;border-radius:10px;-webkit-border-radius:10px;font-family:'Sarabun',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;color:#fff">🗑️ ลบ</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
